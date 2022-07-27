@@ -9,7 +9,6 @@
 __all__ = ["WidgetInfoModel"]
 
 from omni.ui import scene as sc
-from pxr import Gf
 from pxr import UsdGeom
 from pxr import Usd
 from pxr import UsdShade
@@ -57,10 +56,10 @@ class WidgetInfoModel(sc.AbstractManipulatorModel):
 
         # Save the UsdContext name (we currently only work with single Context)
         self._usd_context_name = ''
-        usd_context = self._get_context()
+        self.usd_context = self._get_context()
 
         # Track selection
-        self._events = usd_context.get_stage_event_stream()
+        self._events = self.usd_context.get_stage_event_stream()
         self._stage_event_sub = self._events.create_subscription_to_pop(
             self._on_stage_event, name="Object Info Selection Update"
         )
