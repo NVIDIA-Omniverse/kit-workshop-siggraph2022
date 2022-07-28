@@ -25,7 +25,7 @@ For this workshop, we have prepared a small stage in which you can play around i
 
 In the dropdown, **locate** the `Siggraph2022_Stage` folder. 
 
-**Open** the `Workshop_1` folder.
+**Open** the `Workshop_Layout_Tools` folder.
 
 ### Step 1.3: Open the Stage
 
@@ -57,45 +57,71 @@ We will be getting an extension from the *Community Section* of the *Extension M
 
 ![](images/installext.png#center)
   
-## Challenge Step 3: Using the Scatter Extension
+## Challenge Step 3: What else can you do with the Scatter Extension
+These are *optional* challenges. 
 
-With the extension enabled, try using it. Come up with 5 use cases on how you would expand this extension. Expand the *Hint* section if you get stuck.
+### Challenge 3.1: Use Cases
+Come up with 5 use cases on how you would expand this extension. 
+
+### Challenge 3.2: Using the Extension
+With the extension enabled, try using it. 
+
+Expand the *Hint* section if you get stuck.
 
 <details>
 <summary>Hint</summary>
 
-### Challenge Step 3.1: Select a Prim
+#### Challenge Step 3.2.1: Select a Prim
 
 Select a Prim in the *Stage* 
 We recommend using any of these Prims:
 
 ![](images/primstoselect.png)
 
-### Challenge Step 3.2: Copy Prim Path to Scatter Window
+#### Challenge Step 3.2.2: Copy Prim Path to Scatter Window
 With the selected Prim, **click** the *S button* in the *Scatter Window*.
 
 ![](images/clickS.png)
 
-### Challenge Step 3.3: Scatter Selected Prim
+#### Challenge Step 3.2.3: Scatter Selected Prim
 At the bottom of the *Scatter Window*, **click** the *Scatter button*
 
 ![](images/scatterbutton.png)
 
-### Challenge Step 3.4: Scatter Multiple Prims at Once
+</details>
+
+### Challenge 3.3: Scatter Multiple Prims at Once
+Try to scatter more than one marble at once.
+
+<details>
+<summary>Hint</summary>
+
+#### Challenge Step 3.3.1: Scatter Multiple Prims at Once
 In the *Stage*, **hold** *Ctrl key* and **select** multiple Prims. 
 
 ![](images/multiprim.png)
 
-### Challenge Step 3.5: Scatter Multiple Prims at Once
-**Repeat** steps `3.2` and `3.3`.
+#### Challenge Step 3.3.2: Scatter Multiple Prims at Once
+**Repeat** steps `3.2.2` and `3.2.3`.
 
-### Challenge Step 3.6: Scatter Prims Close Together
+</details>
+
+### Challenge Step 3.4: Scatter Prims Close Together
+Have the scattered marbles only 10 units apart from each other.
+<details>
+<summary>Hint</summary>
+
 To Scatter Prims closer together, **adjust** the *Distance* value in the *Scatter Window*.
-
 ![](images/distance10.png)
 
+</details>
 
-### Challenge Step 3.7: Scatter Less or More Prims
+
+
+### Challenge Step 3.5: Scatter Less or More Prims
+Have the scatter amount only be 8 marbles.
+<details>
+<summary>Hint</summary>
 To change the amount of Prims that will instantiate, **adjust** the *Object Count* value in the *Scatter Window*.
 
 ![](images/objcount.png)
@@ -587,6 +613,6 @@ omni.kit.commands.execute("TransformPrimSRT", path=path_to, new_translation=new_
 ## Congratulations!
 You have completed this workshop! We hope you have enjoyed learning and playing with Omniverse! 
 
-[Sign up for our Contest]
+[<img src="https://developer-blogs.nvidia.com/wp-content/uploads/2022/07/ov-dev-contest-610x345-1.jpg">](https://www.nvidia.com/en-us/omniverse/apps/code/developer-contest/)
 
 [Join us on Discord to extend the conversation!](https://discord.gg/BVFQEeXe)
