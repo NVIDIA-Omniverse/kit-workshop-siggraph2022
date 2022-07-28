@@ -15,6 +15,8 @@ See how to easily create your own custom scene layout tool with the modular Omni
  
 ## Step 1: Prepare your Environment
 
+For this workshop, we have prepared a small stage in which you can play around in and experiment with the extension we will create.
+
 ### Step 1.1: Find Bookmarks tab
 
 **Find** the *Content tab* at the bottom of Omniverse Code and **locate** the `Bookmarks` drop down.
@@ -31,7 +33,9 @@ In the dropdown, **locate** the `Siggraph2022_Stage` folder.
 
 ![](images/workshopstage.png#center)
  
-## Step 2: Add the Extension
+## Step 2: Adding the Extension
+
+We will be getting an extension from the *Community Section* of the *Extension Manager*. There are also other extensions developed by NVIDIA in the *NVIDIA Section*.
  
 ### Step 2.1: Open Extension Manager
 **Click** on the *Extension Tab*. 
@@ -55,10 +59,10 @@ In the dropdown, **locate** the `Siggraph2022_Stage` folder.
   
 ## Challenge Step 3: Using the Scatter Extension
 
-With the extension enabled, try using it. Come up with 5 use cases on how you would expand this extension. Use the *Challenge Steps* below to check your answer.
+With the extension enabled, try using it. Come up with 5 use cases on how you would expand this extension. Expand the *Hint* section if you get stuck.
 
 <details>
-<summary>Challenge Steps</summary>
+<summary>Hint</summary>
 
 ### Challenge Step 3.1: Select a Prim
 
@@ -102,9 +106,11 @@ To change the amount of Prims that will instantiate, **adjust** the *Object Coun
  
 # Scatter Relative to Source Prim
  
-## Step 1: Update window.py
+## Step 4: Get the Location of the Source Prim
+
+We will be changing the origin where the Prims get scattered. Firstly, we will be grabbing the location of the source prim.
  
-### Step 1.1: Open the Extension in Visual Studio Code
+### Step 4.1: Open the Extension in Visual Studio Code
 From the *Scatter Extension*, **Click** the Visual Studio Icon.
 
 ![](images/open_vs.png#center)
@@ -113,13 +119,13 @@ A new instance of *Visual Studio Code* will open up.
 
 ![](images/vs_code.png#center)
 
-### Step 1.2: Open `window.py`
+### Step 4.2: Open `window.py`
 **Open** `window.py` from `ext/omni.example.ui_scatter_tool > omni/example/ui_scatter_tool > window.py`
 
 ![](images/windowpy.png#center)
 
 
-### Step 1.3: Add `omni.usd` module
+### Step 4.3: Add `omni.usd` module
 Under `import omni.ui as ui`, **add** the line `import omni.usd`
 
 ``` python
@@ -137,41 +143,16 @@ from .scatter import scatter
 from .utils import duplicate_prims
 ```
 
+The `omni.usd` module is one of the core Kit APIs, and provides access to USD and USD-related application services.
 
-### Step 1.4: Locate `_on_scatter()`
+### Step 4.4: Locate `_on_scatter()`
 **Scroll Down** to find `_on_scatter()`, and **add** a new line before the variable declaration of `transforms`.
 
-``` python
-def _on_scatter(self):
-    """Called when the user presses the "Scatter" button"""
-    prim_names = [i.strip() for i in self._source_prim_model.as_string.split(",")]
-    if not prim_names:
-        prim_names = get_selection()
+![](images/newline.png#center)
 
-    if not prim_names:
-        # TODO: "Can't clone" message
-        pass
-
-    # ADD NEW LINE HERE
-
-    transforms = scatter(
-        count=[m.as_int for m in self._scatter_count_models],
-        distance=[m.as_float for m in self._scatter_distance_models],
-        randomization=[m.as_float for m in self._scatter_random_models],
-        id_count=len(prim_names),
-        seed=self._scatter_seed_model.as_int,
-    )
-
-    duplicate_prims(
-        transforms=transforms,
-        prim_names=prim_names,
-        target_path=self._scatter_prim_model.as_string,
-        mode=self._scatter_type_model.get_current_item().as_string,
-    )
-```
 `_on_scatter()` is called when the user presses the *Scatter* button in the extension window.
 
-### Step 1.5: Get USD Context
+### Step 4.5: Get USD Context
  
 On the new line, **declare** `usd_context`
 
@@ -211,7 +192,7 @@ def _on_scatter(self):
     )
 ```    
  
-### Step 1.6: Get the Stage 
+### Step 4.6: Get the Stage 
 Below `usd_context` declaration, **add** `stage = usd_context.get_stage()`
 
 ``` python
@@ -221,7 +202,7 @@ usd_context = omni.usd.get_context()
 stage = usd_context.get_stage() 
 ```
 
-### Step 1.7: Get Source Prim from Stage 
+### Step 4.7: Get Source Prim from Stage 
 On the next line, **add** `prim = stage.GetPrimAtPath(self._source_prim_model.as_string)`
 ``` python
 # Store the UsdContext we are attached to
@@ -232,8 +213,8 @@ stage = usd_context.get_stage()
 prim = stage.GetPrimAtPath(self._source_prim_model.as_string)
 ```
 
-### Step 1.8: Get Source Prim's Translate 
-Using `prim`, **store** it's positional data by adding, `position = prim.GetAttribute('xformOp:translate1).Get()`.
+### Step 4.8: Get Source Prim's Translation
+Using `prim`, **store** it's positional data by adding, `position = prim.GetAttribute('xformOp:translate').Get()`.
 ``` python
 # Store the UsdContext we are attached to
 usd_context = omni.usd.get_context()
@@ -244,7 +225,7 @@ prim = stage.GetPrimAtPath(self._source_prim_model.as_string)
 # Get the focused Prim's positional data
 position = prim.GetAttribute('xformOp:translate').Get() 
 ```
-The complete code for `_on_scatter()` is the following:
+Check your work, it should look like this:
 ``` python
 def _on_scatter(self):
     """Called when the user presses the "Scatter" button"""
@@ -281,14 +262,16 @@ def _on_scatter(self):
     )
 ```
  
-## Step 2: Update `scatter()`
+## Step 5: Change the Scatter functionality to Handle any Given Origin
+
+To use any origin we will be modifying the scatter functionality to recieve a position.
  
-### Step 2.1: Open `scatter.py`
+### Step 5.1: Open `scatter.py`
 **Locate** and **Open** `scatter.py` from `exts/omni.example.ui_scatter_tool > omni/example/ui_scatter_tool > scatter.py`
 
 ![](images/scatterpy.png#center)
 
-### Step 2.2: Add New Parameter to `scatter()`
+### Step 5.2: Add New Origin Paramter to `scatter()`
 **Add** `source_prim_location: List[float] = (0,0,0)` as a parameter for `scatter()`
 
 ``` python
@@ -298,7 +281,7 @@ def scatter(
 ```
 `source_prim_location` will contain x, y, and z coordinates of the prim we selected to scatter. 
  
-### Step 2.3: Update Vec3d Creation
+### Step 5.3: Calculate the New Origin
 During `Vec3d` creation, **add** each coordinate value stored in `source_prim_location` to the generated coordinate.
 
 ``` python
@@ -368,9 +351,11 @@ def scatter(
 ```
 
  
-## Step 3: Pass Position into `scatter()`, in `window.py`
+## Step 6: Use the Selected Prim's Location as the Scatter Origin
+
+After updating the scatter functionality we can pass the location of the source prim that we calculated from before.
  
-### Step 3.1: Open window.py
+### Step 6.1: Open window.py
 **Open** `window.py` and locate where `transforms` is declared in `_on_scatter()`
 
 ``` python
@@ -383,7 +368,7 @@ transforms = scatter(
 )
 ```
  
-### Step 3.2: Add the Variable position to `scatter()`
+### Step 6.2: Pass the Location to `scatter()`
 After `seed=self._scatter_seed_model.as_int`, **add** a comma then on a new line **add** the line `source_prim_location=position`
 
 
@@ -398,20 +383,20 @@ transforms = scatter(
 )
 ```
 
-## Challenge Step 4: Add Randomization to Scatter
-Currently, when the *Scatter button* is pressed it will scatter uniformly. Try to change up the code to allow for random distrubtion. Use the *Challenge Steps* below to check your answer.
+## Challenge Step 7: Add Randomization to Scatter
+Currently, when the *Scatter button* is pressed it will scatter uniformly. Try to change up the code to allow for random distrubtion. Expand the *Hint* section if you get stuck.
 
 > **Hint** Use `random.random()`
 
 <details>
-<summary>Challenge Steps</summary>
+<summary>Hint</summary>
 
-### Challenge Step 4.1: Open `scatter.py`
+### Challenge Step 7.1: Open `scatter.py`
 
 **Open** `scatter.py` and *locate* `scatter()`.
 
  
-### Challenge Step 4.2: Add Random Value
+### Challenge Step 7.2: Add Random Value
 **Locate** where we generate our Vec3d. **Modify** the first passed parameter as `source_prim_location[0] + (x + random.random() * randomization[0]),`
 
 ``` python
@@ -426,7 +411,7 @@ result.SetTranslate(
 
 `randomization[0]` refers to the element in the UI of the *Scatter Extension Window* labeled *Random*.
 
-### Challenge Step 4.3: Apply to Y and Z Values
+### Challenge Step 7.3: Apply to Y and Z Values
 **Modify** the Y and Z values that get passed into *Vec3d* constructor similar to the previous step.
 
 ``` python
@@ -439,12 +424,12 @@ result.SetTranslate(
 )
 ```
 
-### Challenge Step 4.4: Change Random Value
+### Challenge Step 7.4: Change Random Value
 **Go back** to Omniverse and **modify** the *Random* parameter in the *Scatter Window*.
 
 ![](images/random.png#center)
 
-### Challenge Step 4.5: Scatter Prims
+### Challenge Step 7.5: Scatter Prims
 **Click** the *Scatter button* and see how the Prims scatter.
 
 > **Note:** Make your Random values high if you are scattering in a small area. 
@@ -460,24 +445,26 @@ result.SetTranslate(
 
 # Scatter the Objects
  
-## Step 1: Scatter a Marble
+## Step 8: Scatter a Marble
+
+The stage has a few marbles we can use to scatter around.
  
-### Step 1.1: Select a Marble in the *Stage* 
+### Step 8.1: Select a Marble in the *Stage* 
 Go to *Stage* and **expand** Marbles, then **select** any marble.
 
 ![](images/marbleselect..png#center)
  
-### Step 1.2: Copy the Selected Marble's Path to the Scatter Extension
+### Step 8.2: Copy the Selected Marble's Path to the Scatter Extension
 With a marble selected, **click** on the *S button* in the *Scatter Window*.
 
 ![](images/clickS.png#center)
 
-### Step 1.3: Change Distance Value for X Axis
+### Step 8.3: Change Distance Value for X Axis
 **Change** the *Distance* in the *X Axis* to 10.
 
 ![](images/distance10.png#center)
 
-### Step 1.4: Click the Scatter Button
+### Step 8.4: Click the Scatter Button
 **Click** the *Scatter* button at the bottom of the window.
 > **Note**: If you do not see the *Scatter button* **scroll down** in the *extension window* or **expand** the *extension window* using the right corner. 
 
@@ -487,9 +474,11 @@ Your scene should look similar to this after clicking the *Scatter button*.
 
 ![](images/marbleScattered.png#center)
  
-## Step 2: Watch the Scene Play
+## Step 9: Watch the Scene Play
+
+The play button is used for more than playing animations or movies. We can also use the play button to simulate physics. 
  
-### Step 2.1: Hit the Play Button
+### Step 9.1: Hit the Play Button
 With the marbles scattered we can watch it in action. **Click** the *Play button* to watch the scene.
 
 ![](images/playbutton.png#center)
@@ -500,47 +489,47 @@ What happens when we press play:
 
 > **Note:** To reset the scene **click** the *Stop button*.
 
-### Step 2.2: Select a Different Prim
+### Step 9.2: Select a Different Prim
 **Select** a diferent Prim in the *Stage*. It could be another marble, the jar, bowl, etc.
 
 We recommend using any of these Prims:
 
 ![](images/primstoselect.png)
 
-### Step 2.3: Copy Selected Prim to Scatter Window
+### Step 9.3: Copy Selected Prim to Scatter Window
 With the Prim selected, **Click** the *S button* to copy the Prim Path into the *Scatter Extension Window*.
 
 ![](images/clickS.png)
  
-### Step 2.4: Change Scatter Parameters
+### Step 9.4: Change Scatter Parameters
 **Change** some of the parameters in the *Scatter Window*. I.e. In *Y Axis* **change** *Object Count* to 20 and *Distance* to 5.
 
 ![](images/params.png)
 
-### Step 2.5: Scatter New Prims
+### Step 9.5: Scatter New Prims
 **Click** the *Scatter button* at the bottom of the *Scatter Window*.
 
 ![](images/scatterbutton.png)
  
-### Step 2.6: Hit the Play Button
+### Step 9.6: Hit the Play Button
 **Click** the *Play button* and watch the scene play out.
 
 ![](images/playbutton.png)
 
 Try to Scatter many items in the scene and play around with the extension.
 
-## Challenge Step 3: Scale Scatter Prims based on Provided Scale
+## Challenge Step 10: Scale Scatter Prims based on Provided Scale
 
-You will notice that there is a *Scale* option. However, this does not work. Try to get it working. Use the Challenge Steps below to check your answer.
+You will notice that there is a *Scale* option. However, this does not work. Try to get it working. Expand the *Hint* section if you get stuck.
 
 ![](images/scale.png)
 
 > **Tip:** Look into `window.py` to see where the value get's used.
 
 <details>
-<summary>Challenge Steps</summary>
+<summary>Hint</summary>
 
-### Challenge Step 3.1: Locate `duplicate_prims()` in `window.py`
+### Challenge Step 10.1: Locate `duplicate_prims()` in `window.py`
 **Find** `duplicate_prims()` in `window.py`.
 
 ``` python
@@ -553,7 +542,7 @@ duplicate_prims(
 ```
 `duplicate_prims()` will take all of the transforms and depending on the mode selected duplicate's the selected prim. This is ideal for adding in a scale parameter. 
 
-### Challenge Step 3.2: Pass Scale values in `duplicate_prims()`
+### Challenge Step 10.2: Pass Scale values in `duplicate_prims()`
 `self._scale_models` holds each scale set in the *Scatter Window*. **Add** `scale=[self._scale_models[0].as_float, self._scale_models[1].as_float, self._scale_models[2].as_float]` in `duplicate_prims()`.
 
 ``` python
@@ -566,21 +555,21 @@ duplicate_prims(
 )
 ```
 
-### Challenge Step 3.3: Locate `duplicate_prims()` in `utils.py`
+### Challenge Step 10.3: Locate `duplicate_prims()` in `utils.py`
 **Open** `utils.py` from `ext/omni.example.ui_scatter_tool > omni/example/ui_scatter_tool > utils.py`. **Locate** `duplicate_prims()`.
 
 ``` python
 def duplicate_prims(transforms: List = [], prim_names: List[str] = [], target_path: str = "", mode: str = "Copy"):
 ```
 
-### Challenge Step 3.4: Add new parameter to `duplicate_prims()`
+### Challenge Step 10.4: Add new parameter to `duplicate_prims()`
 **Add** `scale: List[float] = [1,1,1]` as a parmeter for `duplicate_prims()`.
 
 ``` python
 def duplicate_prims(transforms: List = [], prim_names: List[str] = [], target_path: str = "", mode: str = "Copy", scale: List[float] = [1,1,1]):
 ```
 
-### Challenge Step 3.5: Pass Scale Parameter into Kit Command
+### Challenge Step 10.5: Pass Scale Parameter into Kit Command
 **Scroll down** to find `omni.kit.commands.execute("TransformPrimSRT", path=path_to, new_translation=new_transform)`
 **Add** `new_scale=scale` to Kit Command.
 
@@ -588,7 +577,7 @@ def duplicate_prims(transforms: List = [], prim_names: List[str] = [], target_pa
 omni.kit.commands.execute("TransformPrimSRT", path=path_to, new_translation=new_transform, new_scale=scale)
 ```
  
-### Challenge Step 3.6: Save and Test
+### Challenge Step 10.6: Save and Test
 **Save** the files and try to Scatter Prims with a different scale.
 
 ![](images/scatterscale.gif)
@@ -597,5 +586,7 @@ omni.kit.commands.execute("TransformPrimSRT", path=path_to, new_translation=new_
 
 ## Congratulations!
 You have completed this workshop! We hope you have enjoyed learning and playing with Omniverse! 
+
+[Sign up for our Contest]
 
 [Join us on Discord to extend the conversation!](https://discord.gg/BVFQEeXe)
