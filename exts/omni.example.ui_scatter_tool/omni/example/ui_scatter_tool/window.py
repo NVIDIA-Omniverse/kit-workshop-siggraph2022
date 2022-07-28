@@ -98,8 +98,7 @@ class ScatterWindow(ui.Window):
             transforms=transforms,
             prim_names=prim_names,
             target_path=self._scatter_prim_model.as_string,
-            mode=self._scatter_type_model.get_current_item().as_string,
-            scale=[self._scale_models[0].as_float, self._scale_models[1].as_float, self._scale_models[2].as_float]
+            mode=self._scatter_type_model.get_current_item().as_string
         )
 
     def _build_source(self):
@@ -135,14 +134,6 @@ class ScatterWindow(ui.Window):
                     ui.Label("Seed", name="attribute_name", width=self.label_width)
                     ui.IntDrag(model=self._scatter_seed_model, min=0, max=10000)
 
-                ###########################################################################################################
-                #  WORKSHOP Scale CHALLENGE ADDED CODE
-                with ui.HStack():
-                    ui.Label("Scale", name="attribute_name", width=self.label_width)
-                    for field in zip(["X:", "Y:", "Z:"], self._scale_models):
-                        ui.Label(field[0], width=0, style={"margin": 3.0})
-                        ui.FloatField(model=field[1], height=0, style={"margin": 3.0})
-                ###########################################################################################################
 
     def _build_axis(self, axis_id, axis_name):
         """Build the widgets of the "X" or "Y" or "Z" group"""
