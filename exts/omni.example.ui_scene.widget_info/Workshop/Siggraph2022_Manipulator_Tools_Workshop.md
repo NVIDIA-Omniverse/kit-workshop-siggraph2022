@@ -15,7 +15,7 @@ See how you can build advanced tools on the modular, easily extensible Omniverse
 
 ## Section 1
 
-### Step 1: Get the Stage Opened
+### Step 1: Open the Workshop Stage
 
 >#### <b>Step 1.1: Open the Bookmarks Tab</b>
 
@@ -72,19 +72,23 @@ Navigate to `Viewport` then select a `prim` in the hierarchy. You should see the
 
 Notice the path of the prim is displayed and that the widget nests a scale slider. Also notice that the scale slider doesn't work but don't worry, we will fix this in the next section!
 
->#### :bell:Challenge: Brainstorm Use Cases
+>#### <b>Step 3: Find the Play Button</b>
+Locate the Play button in the viewport and see what happens when you click it!!
+<details>
+<summary>Click here to see where the button is located </summary>
+
+![](./images/playButton.png)
+
+</details>
+
+<br>
+
+>#### :bell:Challenge Step 4: Brainstorm Use Cases
 >Think of 3 ways this tool could be used. Brain storm with your peers and think of how it can be used for your industry!
 
 <br>
 
->#### :bell:Challenge: Find the Play Button
->Locate the Play button in the viewport and see what happens when you click it!!
-><details>
-><summary>Click here to see where the button is located </summary>
->
->![](./images/playButton.png)
->
-></details>
+
 
 <br>
 
@@ -94,9 +98,9 @@ Notice the path of the prim is displayed and that the widget nests a scale slide
 
 ## Section 2
 
-### Step 3: Find your Work Files
+### Step 5: Find your Work Files
 
->#### <b>Step 3.1: Open Visual Studio</b>
+>#### <b>Step 5.1: Open Visual Studio</b>
 
 Go to the `Extensions` tab and click the `Widget Info` extension to open the extension overview to the right. Click the `VS Code` icon next to the folder icon:
 
@@ -106,7 +110,7 @@ Go to the `Extensions` tab and click the `Widget Info` extension to open the ext
 
 <br>
 
->#### <b>Step 3.2: Locate Manipulator Script</b>
+>#### <b>Step 5.2: Locate Manipulator Script</b>
 
 Locate the files you need for this session at:
 
@@ -122,8 +126,8 @@ You are working in
 
 <br>
 
-### Step 4: Fix the Broken Slider
->#### <b>Step 4.1: Find the Function Update_Scale</b>
+### Step 6: Fix the Broken Slider
+>#### <b>Step 6.1: Find the Function Update_Scale</b>
 
 Locate the following function at the bottom of the script:
 
@@ -133,7 +137,7 @@ Locate the following function at the bottom of the script:
 
 This function updates the slider in the Widget. However, it currently does not have any logic to update the scale. Let's start adding the code we need to get that working!
 
->#### <b>Step 4.2: Get the Current Stage</b>
+>#### <b>Step 6.2: Get the Current Stage</b>
 
 Inside of `update_scale` function, find the `print` call.
 
@@ -153,7 +157,7 @@ So now, `update_scale` should look like this:
 
 <br>
 
->#### <b>Step 4.3: Get the Selected Prim</b>
+>#### <b>Step 6.3: Get the Selected Prim</b>
 
 Next, add a variable for the currently selected prim on the stage with the line:
 
@@ -193,13 +197,13 @@ At the top of the manipulator script, add the import as so:
 from pxr import Gf
 ```
 
-### Step 5: Did it work?
-> #### <b>Step 5.1: Save and Play! </b>
+### Step 7: Did it work?
+> #### <b>Step 7.1: Save and Play! </b>
 Save your manipulator script and check that the scale slider works in your widget!
 
 ![](./images/scaleWorking.gif)
 
->#### :bell:Challenge: Scale in larger increments
+>#### :bell:Challenge Step 8: Scale in larger increments
 >
 >Can you change the function to scale the prim in larger increments?
 >
@@ -229,7 +233,7 @@ Save your manipulator script and check that the scale slider works in your widge
 
 <br>
 
->#### :bell:Challenge: What other properties might you want to control with the widget?
+>#### :bell:Challenge Step 9: What other properties might you want to control with the widget?
 > Brainstorm 3-5 other properties that you could add to this widget.
 
 <br>
@@ -240,9 +244,9 @@ Save your manipulator script and check that the scale slider works in your widge
 
 ## Section 3:
 
-### Step 6: Create your scene
+### Step 10: Create your scene
 
->#### <b>Step 3.1: Scale Everything!</b>
+>#### <b>Step 10.1: Scale Everything!</b>
 
 Play around in your scene and scale the prims in various sizes, such as a very large marble or a tiny jar. 
 
@@ -258,7 +262,7 @@ How can you make your scene unique?
 
 <br>
 
->#### :bell:Challenge: Scale in One Axis
+>#### :bell:Challenge Step 11: Scale in One Axis
 >
 >Can you change the function to scale the prim in only one axis?
 >
@@ -279,7 +283,7 @@ How can you make your scene unique?
 
 <br>
 
->#### :bell:Challenge: Turn on the Light Manipulator
+>#### :bell:Challenge Step 12: Turn on the Light Manipulator
 >Turn on the Light Manipulator Extension and click on the Rect Light.
 >
 >How can you change the intensity of the light using the tool?
