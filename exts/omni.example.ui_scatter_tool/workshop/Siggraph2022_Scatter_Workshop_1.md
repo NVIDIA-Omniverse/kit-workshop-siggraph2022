@@ -43,7 +43,7 @@ We will be getting an extension from the *Community Section* of the *Extension M
 ### Step 2.2: Filter by Community Extensions
 **Select** *Community* tab.
 
-![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/filtercomunity.png?raw=true)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/filtercommunity.png?raw=true)
 
 *Community* section is where you can find other developer's extensions from the Community. 
 
