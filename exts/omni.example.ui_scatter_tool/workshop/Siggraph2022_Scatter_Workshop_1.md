@@ -43,19 +43,19 @@ We will be getting an extension from the *Community Section* of the *Extension M
 ### Step 2.2: Filter by Community Extensions
 **Select** *Community* tab.
 
-![](images/filtercommunity.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/filtercomunity.png?raw=true)
 
 *Community* section is where you can find other developer's extensions from the Community. 
 
 ### Step 2.3: Search for Scatter
 **Search** for "scatter" and **Click** on *Omni.ui Window Scatter*.
 
-![](images/communitysearch.png#center)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/communitysearch.png?raw=true)
 
 ### Step 2.4: Install/Enable the Extension
 **Click** on the *Install button* to download the extension. If the extension is already downloaded **Click** on the toggle next to *Disable*.
 
-![](images/installext.png#center)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/installext.png?raw=true)
   
 ## Challenge Step 3: What else can you do with the Scatter Extension
 These are *optional* challenges. 
@@ -76,17 +76,17 @@ Expand the *Hint* section if you get stuck.
 Select a Prim in the *Stage* 
 We recommend using any of these Prims:
 
-![](images/primstoselect.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/primstoselect.png?raw=true)
 
 #### Challenge Step 3.2.2: Copy Prim Path to Scatter Window
 With the selected Prim, **click** the *S button* in the *Scatter Window*.
 
-![](images/clickS.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/clickS.png?raw=true)
 
 #### Challenge Step 3.2.3: Scatter Selected Prim
 At the bottom of the *Scatter Window*, **click** the *Scatter button*
 
-![](images/scatterbutton.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/scatterbutton.png?raw=true)
 
 </details>
 
@@ -99,7 +99,7 @@ Try to scatter more than one marble at once.
 #### Challenge Step 3.3.1: Scatter Multiple Prims at Once
 In the *Stage*, **hold** *Ctrl key* and **select** multiple Prims. 
 
-![](images/multiprim.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/multiprim.png?raw=true)
 
 #### Challenge Step 3.3.2: Scatter Multiple Prims at Once
 **Repeat** steps `3.2.2` and `3.2.3`.
@@ -112,7 +112,8 @@ Have the scattered marbles only 10 units apart from each other.
 <summary>Hint</summary>
 
 To Scatter Prims closer together, **adjust** the *Distance* value in the *Scatter Window*.
-![](images/distance10.png)
+
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/distance10.png?raw=true)
 
 </details>
 
@@ -124,7 +125,7 @@ Have the scatter amount only be 8 marbles.
 <summary>Hint</summary>
 To change the amount of Prims that will instantiate, **adjust** the *Object Count* value in the *Scatter Window*.
 
-![](images/objcount.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/objcount.png?raw=true)
  
 </details>
  
@@ -139,16 +140,16 @@ We will be changing the origin where the Prims get scattered. Firstly, we will b
 ### Step 4.1: Open the Extension in Visual Studio Code
 From the *Scatter Extension*, **Click** the Visual Studio Icon.
 
-![](images/open_vs.png#center)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/open_vs.png?raw=true)
 
 A new instance of *Visual Studio Code* will open up.
 
-![](images/vs_code.png#center)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/vs_code.png?raw=true)
 
 ### Step 4.2: Open `window.py`
 **Open** `window.py` from `ext/omni.example.ui_scatter_tool > omni/example/ui_scatter_tool > window.py`
 
-![](images/windowpy.png#center)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/windowpy.png?raw=true)
 
 
 ### Step 4.3: Add `omni.usd` module
@@ -174,7 +175,7 @@ The `omni.usd` module is one of the core Kit APIs, and provides access to USD an
 ### Step 4.4: Locate `_on_scatter()`
 **Scroll Down** to find `_on_scatter()`, and **add** a new line before the variable declaration of `transforms`.
 
-![](images/newline.png#center)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/newline.png?raw=true)
 
 `_on_scatter()` is called when the user presses the *Scatter* button in the extension window.
 
@@ -295,7 +296,7 @@ To use any origin we will be modifying the scatter functionality to recieve a po
 ### Step 5.1: Open `scatter.py`
 **Locate** and **Open** `scatter.py` from `exts/omni.example.ui_scatter_tool > omni/example/ui_scatter_tool > scatter.py`
 
-![](images/scatterpy.png#center)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/scatterpy.png?raw=true)
 
 ### Step 5.2: Add New Origin Paramter to `scatter()`
 **Add** `source_prim_location: List[float] = (0,0,0)` as a parameter for `scatter()`
@@ -453,16 +454,16 @@ result.SetTranslate(
 ### Challenge Step 7.4: Change Random Value
 **Go back** to Omniverse and **modify** the *Random* parameter in the *Scatter Window*.
 
-![](images/random.png#center)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/random.png?raw=true)
 
 ### Challenge Step 7.5: Scatter Prims
 **Click** the *Scatter button* and see how the Prims scatter.
 
 > **Note:** Make your Random values high if you are scattering in a small area. 
 
-![](images/scatterbutton.png#center)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/scatterbutton.png?raw=true)
 
-![](images/randomscatter.png#center)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/randomscatter.png?raw=true)
 
  
 </details>
@@ -478,27 +479,27 @@ The stage has a few marbles we can use to scatter around.
 ### Step 8.1: Select a Marble in the *Stage* 
 Go to *Stage* and **expand** Marbles, then **select** any marble.
 
-![](images/marbleselect..png#center)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/marbleselect.png?raw=true)
  
 ### Step 8.2: Copy the Selected Marble's Path to the Scatter Extension
 With a marble selected, **click** on the *S button* in the *Scatter Window*.
 
-![](images/clickS.png#center)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/clickS.png?raw=true)
 
 ### Step 8.3: Change Distance Value for X Axis
 **Change** the *Distance* in the *X Axis* to 10.
 
-![](images/distance10.png#center)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/distance10.png?raw=true)
 
 ### Step 8.4: Click the Scatter Button
 **Click** the *Scatter* button at the bottom of the window.
 > **Note**: If you do not see the *Scatter button* **scroll down** in the *extension window* or **expand** the *extension window* using the right corner. 
 
-![](images/scatterbutton.png#center)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/scatterbutton.png?raw=true)
 
 Your scene should look similar to this after clicking the *Scatter button*.
 
-![](images/marbleScattered.png#center)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/marbleScattered.png?raw=true)
  
 ## Step 9: Watch the Scene Play
 
@@ -507,11 +508,11 @@ The play button is used for more than playing animations or movies. We can also 
 ### Step 9.1: Hit the Play Button
 With the marbles scattered we can watch it in action. **Click** the *Play button* to watch the scene.
 
-![](images/playbutton.png#center)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/playbutton.png?raw=true)
  
 What happens when we press play:
 
-![](images/playbuttonaction.gif)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/playbuttonaction.gif?raw=true)
 
 > **Note:** To reset the scene **click** the *Stop button*.
 
@@ -520,27 +521,27 @@ What happens when we press play:
 
 We recommend using any of these Prims:
 
-![](images/primstoselect.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/primstoselect.png?raw=true)
 
 ### Step 9.3: Copy Selected Prim to Scatter Window
 With the Prim selected, **Click** the *S button* to copy the Prim Path into the *Scatter Extension Window*.
 
-![](images/clickS.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/clickS.png?raw=true)
  
 ### Step 9.4: Change Scatter Parameters
 **Change** some of the parameters in the *Scatter Window*. I.e. In *Y Axis* **change** *Object Count* to 20 and *Distance* to 5.
 
-![](images/params.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/params.png?raw=true)
 
 ### Step 9.5: Scatter New Prims
 **Click** the *Scatter button* at the bottom of the *Scatter Window*.
 
-![](images/scatterbutton.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/scatterbutton.png?raw=true)
  
 ### Step 9.6: Hit the Play Button
 **Click** the *Play button* and watch the scene play out.
 
-![](images/playbutton.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/playbutton.png?raw=true)
 
 Try to Scatter many items in the scene and play around with the extension.
 
@@ -548,7 +549,7 @@ Try to Scatter many items in the scene and play around with the extension.
 
 You will notice that there is a *Scale* option. However, this does not work. Try to get it working. Expand the *Hint* section if you get stuck.
 
-![](images/scale.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/scale.png?raw=true)
 
 > **Tip:** Look into `window.py` to see where the value get's used.
 
@@ -607,6 +608,7 @@ omni.kit.commands.execute("TransformPrimSRT", path=path_to, new_translation=new_
 **Save** the files and try to Scatter Prims with a different scale.
 
 ![](images/scatterscale.gif)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/scatterscale.gif?raw=true)
  
 </details>
 
