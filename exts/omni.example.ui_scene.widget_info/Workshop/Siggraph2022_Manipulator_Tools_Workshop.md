@@ -203,6 +203,9 @@ Save your manipulator script and check that the scale slider works in your widge
 
 ![](./images/scaleWorking.gif)
 
+>:exclamation: Not Working? Check the `Console` to debug any errors.
+>![](./images/Console.png)
+
 >#### :bell:Challenge Step 8: Scale in larger increments
 >
 >Can you change the function to scale the prim in larger increments?
