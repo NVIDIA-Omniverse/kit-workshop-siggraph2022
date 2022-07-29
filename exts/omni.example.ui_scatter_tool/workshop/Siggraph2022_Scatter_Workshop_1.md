@@ -31,7 +31,7 @@ In the dropdown, **locate** the `Siggraph2022_Stage` folder.
 
 **Open** `Siggraph2022_Stage.usd`
 
-![](images/workshopstage.png#center)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/workshopstage.png?raw=true)
  
 ## Step 2: Adding the Extension
 
