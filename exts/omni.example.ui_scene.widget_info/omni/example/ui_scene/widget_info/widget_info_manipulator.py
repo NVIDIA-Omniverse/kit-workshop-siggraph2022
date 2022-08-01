@@ -150,8 +150,9 @@ class WidgetInfoManipulator(sc.Manipulator):
 
         # Update the shapes
         position = self.model.get_as_floats(self.model.get_item("position"))
-        self._root.transform = sc.Matrix44.get_translation_matrix(*position)
-        self._root.visible = True
+        if self._root:
+            self._root.transform = sc.Matrix44.get_translation_matrix(*position)
+            self._root.visible = True
 
         # Update the slider
         def update_scale(prim_name, value):
