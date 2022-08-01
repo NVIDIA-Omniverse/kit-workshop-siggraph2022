@@ -154,7 +154,7 @@ class WidgetInfoManipulator(sc.Manipulator):
             self._root.transform = sc.Matrix44.get_translation_matrix(*position)
             self._root.visible = True
 
-     ## Step 6.2 Start ##
+        ## Step 6.2 Start ##
         # Update the slider
         def update_scale(prim_name, value):
             print(f"changing scale of {prim_name}, {value}")
