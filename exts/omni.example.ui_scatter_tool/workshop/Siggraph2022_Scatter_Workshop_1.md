@@ -74,6 +74,9 @@ Expand the *Hint* section if you get stuck.
 #### Challenge Step 3.2.1: Select a Prim
 
 Select a Prim in the *Stage* 
+
+> **Note:** Prim is short for “primitive”, the prim is the fundamental unit in Omniverse. Anything imported or created in a USD scene is a prim. This includes, cameras, sounds, lights, meshes, and more. Primitives are technically containers of metadata, properties, and other prims. Read more about USD prims in the official documentation. 
+
 We recommend using any of these Prims:
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/primstoselect.png?raw=true)
@@ -131,12 +134,10 @@ To change the amount of Prims that will instantiate, **adjust** the *Object Coun
  
 <br>
  
-# Scatter Relative to Source Prim
- 
-## Step 4: Get the Location of the Source Prim
+## Step 4: Change the Scatter functionality to Handle any Given Origin
 
-We will be changing the origin where the Prims get scattered. Firstly, we will be grabbing the location of the source prim.
- 
+To use any origin we will be modifying the scatter functionality to recieve a position.
+
 ### Step 4.1: Open the Extension in Visual Studio Code
 From the *Scatter Extension*, **Click** the Visual Studio Icon.
 
@@ -145,171 +146,44 @@ From the *Scatter Extension*, **Click** the Visual Studio Icon.
 A new instance of *Visual Studio Code* will open up.
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/vs_code.png?raw=true)
-
-### Step 4.2: Open `window.py`
-**Open** `window.py` from `ext/omni.example.ui_scatter_tool > omni/example/ui_scatter_tool > window.py`
-
-![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/windowpy.png?raw=true)
-
-
-### Step 4.3: Add `omni.usd` module
-Under `import omni.ui as ui`, **add** the line `import omni.usd`
-
-``` python
-# Import omni.usd module
-import omni.usd
-```
-You should then have the following at the top of your file:
-``` python
-import omni.ui as ui
-import omni.usd
-from .style import scatter_window_style
-from .utils import get_selection
-from .combo_box_model import ComboBoxModel
-from .scatter import scatter
-from .utils import duplicate_prims
-```
-
-The `omni.usd` module is one of the core Kit APIs, and provides access to USD and USD-related application services.
-
-### Step 4.4: Locate `_on_scatter()`
-**Scroll Down** to find `_on_scatter()`, and **add** a new line before the variable declaration of `transforms`.
-
-![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/newline.png?raw=true)
-
-`_on_scatter()` is called when the user presses the *Scatter* button in the extension window.
-
-### Step 4.5: Get USD Context
  
-On the new line, **declare** `usd_context`
-
-``` python
-usd_context = omni.usd.get_context()
-```
-
-Your code should look like the following:
-
-``` python
-def _on_scatter(self):
-    """Called when the user presses the "Scatter" button"""
-    prim_names = [i.strip() for i in self._source_prim_model.as_string.split(",")]
-    if not prim_names:
-        prim_names = get_selection()
-
-    if not prim_names:
-        # TODO: "Can't clone" message
-        pass
-
-    # Get the UsdContext we are attached to
-    usd_context = omni.usd.get_context()
-
-    transforms = scatter(
-        count=[m.as_int for m in self._scatter_count_models],
-        distance=[m.as_float for m in self._scatter_distance_models],
-        randomization=[m.as_float for m in self._scatter_random_models],
-        id_count=len(prim_names),
-        seed=self._scatter_seed_model.as_int,
-    )
-
-    duplicate_prims(
-        transforms=transforms,
-        prim_names=prim_names,
-        target_path=self._scatter_prim_model.as_string,
-        mode=self._scatter_type_model.get_current_item().as_string,
-    )
-```    
- 
-### Step 4.6: Get the Stage 
-Below `usd_context` declaration, **add** `stage = usd_context.get_stage()`
-
-``` python
-# Store the UsdContext we are attached to
-usd_context = omni.usd.get_context()
-# Get the stage from the current UsdContext
-stage = usd_context.get_stage() 
-```
-
-### Step 4.7: Get Source Prim from Stage 
-On the next line, **add** `prim = stage.GetPrimAtPath(self._source_prim_model.as_string)`
-``` python
-# Store the UsdContext we are attached to
-usd_context = omni.usd.get_context()
-# Get the stage from the current UsdContext
-stage = usd_context.get_stage() 
-# Store the Prim that is currently referenced in the extension
-prim = stage.GetPrimAtPath(self._source_prim_model.as_string)
-```
-
-### Step 4.8: Get Source Prim's Translation
-Using `prim`, **store** it's positional data by adding, `position = prim.GetAttribute('xformOp:translate').Get()`.
-``` python
-# Store the UsdContext we are attached to
-usd_context = omni.usd.get_context()
-# Get the stage from the current UsdContext
-stage = usd_context.get_stage() 
-# Store the Prim that is currently referenced in the extension
-prim = stage.GetPrimAtPath(self._source_prim_model.as_string)
-# Get the focused Prim's positional data
-position = prim.GetAttribute('xformOp:translate').Get() 
-```
-Check your work, it should look like this:
-``` python
-def _on_scatter(self):
-    """Called when the user presses the "Scatter" button"""
-    prim_names = [i.strip() for i in self._source_prim_model.as_string.split(",")]
-    if not prim_names:
-        prim_names = get_selection()
-
-    if not prim_names:
-        # TODO: "Can't clone" message
-        pass
-
-    # Store the UsdContext we are attached to
-    usd_context = omni.usd.get_context()
-    # Get the stage from the current UsdContext
-    stage = usd_context.get_stage() 
-    # Store the Prim that is currently referenced in the extension
-    prim = stage.GetPrimAtPath(self._source_prim_model.as_string)
-    # Get the focused Prim's positional data
-    position = prim.GetAttribute('xformOp:translate').Get() 
-
-    transforms = scatter(
-        count=[m.as_int for m in self._scatter_count_models],
-        distance=[m.as_float for m in self._scatter_distance_models],
-        randomization=[m.as_float for m in self._scatter_random_models],
-        id_count=len(prim_names),
-        seed=self._scatter_seed_model.as_int,
-    )
-
-    duplicate_prims(
-        transforms=transforms,
-        prim_names=prim_names,
-        target_path=self._scatter_prim_model.as_string,
-        mode=self._scatter_type_model.get_current_item().as_string,
-    )
-```
- 
-## Step 5: Change the Scatter functionality to Handle any Given Origin
-
-To use any origin we will be modifying the scatter functionality to recieve a position.
- 
-### Step 5.1: Open `scatter.py`
+### Step 4.2: Open `scatter.py`
 **Locate** and **Open** `scatter.py` from `exts/omni.example.ui_scatter_tool > omni/example/ui_scatter_tool > scatter.py`
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/scatterpy.png?raw=true)
 
-### Step 5.2: Add New Origin Paramter to `scatter()`
+### Step 4.3: Add New Origin Paramter to `scatter()`
 **Add** `source_prim_location: List[float] = (0,0,0)` as a parameter for `scatter()`
 
 ``` python
 def scatter(
-    count: List[int], distance: List[float], randomization: List[float], id_count: int = 1, seed: Optional[int] = None, source_prim_location: List[float] = (0,0,0)
+    count: List[int],
+    distance: List[float],
+    randomization: List[float],
+    id_count: int = 1,
+    seed: Optional[int] = None,
+    source_prim_location: List[float] = (0,0,0)
 ):
 ```
 `source_prim_location` will contain x, y, and z coordinates of the prim we selected to scatter. 
  
-### Step 5.3: Calculate the New Origin
-During `Vec3d` creation, **add** each coordinate value stored in `source_prim_location` to the generated coordinate.
+### Step 4.4: Locate `result.SetTranslate`
+
+**Locate** near the bottom of `scatter.py` the code snippet below.
+``` python
+result.SetTranslate(
+    Gf.Vec3d(
+        x,
+        y,
+        z,
+    )
+)
+```
+
+`Vec3d` creates a 3 dimensional vector. Each prim's position is generated via the code above.
+
+### Step 4.5: Calculate the New Origin
+During `Vec3d` creation, **add** each coordinate value stored in `source_prim_location` to the generated coordinate. i.e. `x` would turn into `source_prim_location[0] + x`.
 
 ``` python
 result.SetTranslate(
@@ -377,6 +251,229 @@ def scatter(
                 yield (result, id)
 ```
 
+### Step 4.6: Save `scatter.py` and Open `window.py`  
+**Save** `scatter.py` and **Open** `window.py` from `ext/omni.example.ui_scatter_tool > omni/example/ui_scatter_tool > window.py`. 
+
+
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/windowpy.png?raw=true)
+
+
+### Step 4.7: Add Gf module
+Underneath the imports and above `LABEL_WIDTH`, **add** the line `from pxr import Gf`
+
+``` python
+import omni.ui as ui
+from .style import scatter_window_style
+from .utils import get_selection
+from .combo_box_model import ComboBoxModel
+from .scatter import scatter
+from .utils import duplicate_prims
+from pxr import Gf
+
+LABEL_WIDTH = 120
+SPACING = 4
+```
+
+### Step 4.8: Locate `transforms`
+
+**Locate** where `transforms` is declared inside of `_on_scatter()`
+
+``` python
+transforms = scatter(
+    count=[m.as_int for m in self._scatter_count_models],
+    distance=[m.as_float for m in self._scatter_distance_models],
+    randomization=[m.as_float for m in self._scatter_random_models],
+    id_count=len(prim_names),
+    seed=self._scatter_seed_model.as_int
+)
+```
+
+### Step 4.9 Hard Code Origin Position
+
+**Add** `source_prim_location=Gf.Vec3d((0,0,-500))`after `seed=self._scatter_seed_model.as_int`. 
+>**Note:** Don't forget to add a comman after `seed=self._scatter_seed_model.as_int`.
+
+``` python
+transforms = scatter(
+    count=[m.as_int for m in self._scatter_count_models],
+    distance=[m.as_float for m in self._scatter_distance_models],
+    randomization=[m.as_float for m in self._scatter_random_models],
+    id_count=len(prim_names),
+    seed=self._scatter_seed_model.as_int,
+
+)
+```
+
+### Step 4.10: Select a Marble in the *Stage* 
+**Save** `window.py` and go back to *Omniverse Code*. Go to *Stage* and **expand** Marbles, then **select** any marble.
+
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/marbleselect.png?raw=true)
+ 
+### Step 4.11: Copy the Selected Marble's Path to the Scatter Extension
+With a marble selected, **click** on the *S button* in the *Scatter Window*.
+
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/clickS.png?raw=true)
+
+Notice how the marbles scattered to the right of the stage.
+
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/sidescatter.png?raw=true)
+
+# Scatter Relative to Source Prim
+ 
+## Step 5: Get the Location of the Source Prim
+
+We will be changing the origin where the Prims get scattered. Firstly, we will be grabbing the location of the source prim.
+
+> **Note:** Prim is short for “primitive”, the prim is the fundamental unit in Omniverse. Anything imported or created in a USD scene is a prim. This includes, cameras, sounds, lights, meshes, and more. Primitives are technically containers of metadata, properties, and other prims. Read more about USD prims in the official documentation. 
+ 
+### Step 5.1: Open `window.py`
+**Open** `window.py` from `ext/omni.example.ui_scatter_tool > omni/example/ui_scatter_tool > window.py`
+
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/windowpy.png?raw=true)
+
+
+### Step 5.2: Add `omni.usd` module
+Under `import omni.ui as ui`, **add** the line `import omni.usd`
+
+``` python
+# Import omni.usd module
+import omni.usd
+```
+You should then have the following at the top of your file:
+``` python
+import omni.ui as ui
+import omni.usd
+from .style import scatter_window_style
+from .utils import get_selection
+from .combo_box_model import ComboBoxModel
+from .scatter import scatter
+from .utils import duplicate_prims
+from pxr import Gf
+```
+
+The `omni.usd` module is one of the core Kit APIs, and provides access to USD (Universal Scene Description) and USD-related application services.
+
+### Step 5.3: Locate `_on_scatter()`
+**Scroll Down** to find `_on_scatter()`, and **add** a new line before the variable declaration of `transforms`.
+
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/newline.png?raw=true)
+
+`_on_scatter()` is called when the user presses the *Scatter* button in the extension window.
+
+### Step 5.4: Get USD Context
+ 
+On the new line, **declare** `usd_context`. Make sure the line is tabbed in and parallel with the line `if not prim_names:`.
+
+``` python
+usd_context = omni.usd.get_context()
+```
+
+Your code should look like the following:
+
+``` python
+def _on_scatter(self):
+    """Called when the user presses the "Scatter" button"""
+    prim_names = [i.strip() for i in self._source_prim_model.as_string.split(",")]
+    if not prim_names:
+        prim_names = get_selection()
+
+    if not prim_names:
+        # TODO: "Can't clone" message
+        pass
+
+    # Get the UsdContext we are attached to
+    usd_context = omni.usd.get_context()
+
+    transforms = scatter(
+        count=[m.as_int for m in self._scatter_count_models],
+        distance=[m.as_float for m in self._scatter_distance_models],
+        randomization=[m.as_float for m in self._scatter_random_models],
+        id_count=len(prim_names),
+        seed=self._scatter_seed_model.as_int,
+    )
+
+    duplicate_prims(
+        transforms=transforms,
+        prim_names=prim_names,
+        target_path=self._scatter_prim_model.as_string,
+        mode=self._scatter_type_model.get_current_item().as_string,
+    )
+```    
+ 
+### Step 5.5: Get the Stage 
+Below `usd_context` declaration, **add** `stage = usd_context.get_stage()`
+
+``` python
+# Store the UsdContext we are attached to
+usd_context = omni.usd.get_context()
+# Get the stage from the current UsdContext
+stage = usd_context.get_stage() 
+```
+
+The stage variable will use USD to get the current stage. The `Stage` is where your prims are nested in the hierarchy.
+
+### Step 5.6: Get Source Prim from Stage 
+On the next line, **add** `prim = stage.GetPrimAtPath(self._source_prim_model.as_string)`
+``` python
+# Store the UsdContext we are attached to
+usd_context = omni.usd.get_context()
+# Get the stage from the current UsdContext
+stage = usd_context.get_stage() 
+# Store the Prim that is currently referenced in the extension
+prim = stage.GetPrimAtPath(self._source_prim_model.as_string)
+```
+
+### Step 5.7: Get Source Prim's Translation
+Next we will **store** the prim's positional data by adding, `position = prim.GetAttribute('xformOp:translate').Get()`. After checking your work below **save** `window.py`.
+``` python
+# Store the UsdContext we are attached to
+usd_context = omni.usd.get_context()
+# Get the stage from the current UsdContext
+stage = usd_context.get_stage() 
+# Store the Prim that is currently referenced in the extension
+prim = stage.GetPrimAtPath(self._source_prim_model.as_string)
+# Get the focused Prim's positional data
+position = prim.GetAttribute('xformOp:translate').Get() 
+```
+Check your work, it should look like this:
+``` python
+def _on_scatter(self):
+    """Called when the user presses the "Scatter" button"""
+    prim_names = [i.strip() for i in self._source_prim_model.as_string.split(",")]
+    if not prim_names:
+        prim_names = get_selection()
+
+    if not prim_names:
+        # TODO: "Can't clone" message
+        pass
+
+    # Store the UsdContext we are attached to
+    usd_context = omni.usd.get_context()
+    # Get the stage from the current UsdContext
+    stage = usd_context.get_stage() 
+    # Store the Prim that is currently referenced in the extension
+    prim = stage.GetPrimAtPath(self._source_prim_model.as_string)
+    # Get the focused Prim's positional data
+    position = prim.GetAttribute('xformOp:translate').Get() 
+
+    transforms = scatter(
+        count=[m.as_int for m in self._scatter_count_models],
+        distance=[m.as_float for m in self._scatter_distance_models],
+        randomization=[m.as_float for m in self._scatter_random_models],
+        id_count=len(prim_names),
+        seed=self._scatter_seed_model.as_int,
+        source_prim_location=Gf.Vec3((0,0,-500))
+    )
+
+    duplicate_prims(
+        transforms=transforms,
+        prim_names=prim_names,
+        target_path=self._scatter_prim_model.as_string,
+        mode=self._scatter_type_model.get_current_item().as_string,
+    )
+```
+ 
+
  
 ## Step 6: Use the Selected Prim's Location as the Scatter Origin
 
@@ -410,7 +507,7 @@ transforms = scatter(
 )
 ```
 
-## Challenge Step 7: Add Randomization to Scatter
+## Challenge Step 7.1: Add Randomization to Scatter
 Currently, when the *Scatter button* is pressed it will scatter uniformly. Try to change up the code to allow for random distrubtion. Expand the *Hint* section if you get stuck.
 
 > **Hint** Use `random.random()`
@@ -418,12 +515,12 @@ Currently, when the *Scatter button* is pressed it will scatter uniformly. Try t
 <details>
 <summary>Hint</summary>
 
-### Challenge Step 7.1: Open `scatter.py`
+### Challenge Step 7.1.1: Open `scatter.py`
 
 **Open** `scatter.py` and *locate* `scatter()`.
 
  
-### Challenge Step 7.2: Add Random Value
+### Challenge Step 7.1.2: Add Random Value
 **Locate** where we generate our Vec3d. **Modify** the first passed parameter as `source_prim_location[0] + (x + random.random() * randomization[0]),`
 
 ``` python
@@ -438,7 +535,7 @@ result.SetTranslate(
 
 `randomization[0]` refers to the element in the UI of the *Scatter Extension Window* labeled *Random*.
 
-### Challenge Step 7.3: Apply to Y and Z Values
+### Challenge Step 7.1.3: Apply to Y and Z Values
 **Modify** the Y and Z values that get passed into *Vec3d* constructor similar to the previous step.
 
 ``` python
@@ -451,12 +548,12 @@ result.SetTranslate(
 )
 ```
 
-### Challenge Step 7.4: Change Random Value
+### Challenge Step 7.1.4: Change Random Value
 **Go back** to Omniverse and **modify** the *Random* parameter in the *Scatter Window*.
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/random.png?raw=true)
 
-### Challenge Step 7.5: Scatter Prims
+### Challenge Step 7.1.5: Scatter Prims
 **Click** the *Scatter button* and see how the Prims scatter.
 
 > **Note:** Make your Random values high if you are scattering in a small area. 
