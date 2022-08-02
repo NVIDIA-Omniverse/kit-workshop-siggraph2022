@@ -41,12 +41,12 @@ class ScatterWindow(ui.Window):
 
         # Defaults
         self._scatter_prim_model.as_string = "/World/Scatter01"
-        self._scatter_count_models[0].as_int = 50
+        self._scatter_count_models[0].as_int = 15
         self._scatter_count_models[1].as_int = 1
         self._scatter_count_models[2].as_int = 1
-        self._scatter_distance_models[0].as_float = 500
-        self._scatter_distance_models[1].as_float = 500
-        self._scatter_distance_models[2].as_float = 500
+        self._scatter_distance_models[0].as_float = 10
+        self._scatter_distance_models[1].as_float = 10
+        self._scatter_distance_models[2].as_float = 10
         self._scale_models[0].as_float = 1
         self._scale_models[1].as_float = 1
         self._scale_models[2].as_float = 1
