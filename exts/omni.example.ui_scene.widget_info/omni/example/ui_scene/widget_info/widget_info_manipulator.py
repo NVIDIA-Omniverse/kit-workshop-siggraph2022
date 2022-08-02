@@ -157,6 +157,8 @@ class WidgetInfoManipulator(sc.Manipulator):
         ## Step 6.2 Start ##
         # Update the slider
         def update_scale(prim_name, value):
+            if value <= 0:
+                value = 0.01
             print(f"changing scale of {prim_name}, {value}")
 
         if self._slider_model:
