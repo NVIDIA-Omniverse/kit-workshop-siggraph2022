@@ -148,7 +148,7 @@ A new instance of *Visual Studio Code* will open up.
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/vs_code.png?raw=true)
  
 ### Step 4.2: Open `scatter.py`
-**Locate** and **Open** `scatter.py` from `exts/omni.example.ui_scatter_tool > omni/example/ui_scatter_tool > scatter.py`
+**Locate** and **Open** `scatter.py` from `exts/omni.example.scene_auth_scatter > omni/example/ui_scatter_tool > scatter.py`
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/scatterpy.png?raw=true)
 
@@ -166,6 +166,8 @@ def scatter(
 ):
 ```
 `source_prim_location` will contain x, y, and z coordinates of the prim we selected to scatter. 
+
+> **Note:** Prim is short for “primitive”, the prim is the fundamental unit in Omniverse. Anything imported or created in a USD scene is a prim. This includes, cameras, sounds, lights, meshes, and more. Primitives are technically containers of metadata, properties, and other prims. Read more about USD prims in the official documentation. 
  
 ### Step 4.4: Locate `result.SetTranslate`
 
@@ -252,7 +254,7 @@ def scatter(
 ```
 
 ### Step 4.6: Save `scatter.py` and Open `window.py`  
-**Save** `scatter.py` and **Open** `window.py` from `ext/omni.example.ui_scatter_tool > omni/example/ui_scatter_tool > window.py`. 
+**Save** `scatter.py` and **Open** `window.py` from `ext/omni.example.scene_auth_scatter > omni/example/ui_scatter_tool > window.py`. 
 
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/windowpy.png?raw=true)
@@ -323,8 +325,6 @@ Notice how the marbles scattered to the right of the stage.
 ## Step 5: Get the Location of the Source Prim
 
 We will be changing the origin where the Prims get scattered. Firstly, we will be grabbing the location of the source prim.
-
-> **Note:** Prim is short for “primitive”, the prim is the fundamental unit in Omniverse. Anything imported or created in a USD scene is a prim. This includes, cameras, sounds, lights, meshes, and more. Primitives are technically containers of metadata, properties, and other prims. Read more about USD prims in the official documentation. 
  
 ### Step 5.1: Open `window.py`
 **Open** `window.py` from `ext/omni.example.ui_scatter_tool > omni/example/ui_scatter_tool > window.py`
