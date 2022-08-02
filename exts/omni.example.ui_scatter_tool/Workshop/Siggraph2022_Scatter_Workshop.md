@@ -32,7 +32,7 @@ In the dropdown,
 
 <br>
 
-![](./images/SiggraphWorkshopStageOpen.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/SiggraphWorkshopStageOpen.png?raw=true)
 
 <br>
 
@@ -46,7 +46,8 @@ Click on `Extensions` Manager Tab
 Select `Community` tab
 <br>
 
-![](./images/extensionCommunity.PNG)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/extensionCommunity.PNG?raw=true)
+
 
 <br>
 
@@ -54,7 +55,7 @@ Select `Community` tab
 
 Search for `Scatter Tool` and click on `Omni.UI Window Scatter`
 
-![](./images/windowScatter.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/windowScatter.png?raw=true)
 
 <br>
 
@@ -68,7 +69,7 @@ Click on the extension and then click `Install` in the right console. Once insta
 
 `Scatter Window` will appear on the screen when the extension is enabled.
 
-![](./images/ScatterWindow.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/ScatterWindow.png?raw=true) 
 
 <br>
 
@@ -77,7 +78,8 @@ In the `Viewport` select a prim in the `Stage Hierarchy` and then set the Source
 
 A `prim` is short for primitive. The prim is the fundamental unit in Omniverse. Anything imported or created in a `USD`, Universal Scene Description, scene. This includes camera, sounds, lights, meshes, etc. 
 
-![](./images/scatterSource.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/scatterSource.png?raw=true)
+
 
 <br>
 
@@ -89,7 +91,7 @@ Leave Y and Z at default and then click `Scatter Prim A` at the bottom of the `S
 
 Here is an example of what your scene may look like:
 
-![](./images/scatterPrim.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/scatterPrim.png?raw=true)
 
 >:question:Did you notice?
 >- Prim scatters at World Origin `[0,0,0]`. How do you think this can be fixed?
@@ -103,7 +105,7 @@ Find the `Play` button and enable physics, watch what happens! Don't forget to h
 <details>
 <summary>Click here to see where the play button is located</summary>
 
-![](./images/playButton.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/playButton.png?raw=true)
 
 </details>
 
@@ -116,7 +118,7 @@ Find the `Scatter01` folder in `Stage` and left-click on the folder then right-c
 
 >:exclamation: Warning :exclamation: If you `ctrl+z` you will undo the last 3 scatters.
 
-![](./images/deletescatter.gif)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/deletescatter.gif?raw=true)
 
 <br>
 
@@ -137,7 +139,7 @@ Find the `Scatter01` folder in `Stage` and left-click on the folder then right-c
 
 Go to the `Extensions` tab and click the `Scatter Window` extension to open the extension overview to the right. Click the `VS Code` icon next to the folder icon:
 
-![](./images/VsCode.PNG)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/VScode.png?raw=true)
 
 <br>
 
@@ -153,7 +155,7 @@ You are working in
 
 <br>
 
-![](./images/vsCodeStruct.gif)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/vsCodeStruct.gif?raw=true)
 
 <br>
 
@@ -163,7 +165,7 @@ Locate the sets of `Models` at the top of the `ScatterWindow` class.
 
 This is where prim A is defined for both the source and the scatter properties. 
 
-![](./images/models.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/models.png?raw=true)
 
 <br>
 
@@ -178,7 +180,7 @@ Below `self._scatter_prim_model_a` in the sets of `Models`, add the source and s
 
 >:exclamation: Check that you have tabbed correctly. Your new `Models` section should look like this:
 
-![](./images/primModelB.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/primModelB.png?raw=true)
 
 <br>
 
@@ -189,7 +191,7 @@ Locate the sets of `Defaults` below the sets of `Models`.
 
 This is the default name for the scatter that will be nested in `Stage`.
 
-![](./images/defaults.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/defaults.png?raw=true)
 
 <br>
 
@@ -202,7 +204,9 @@ Below the property for `self._scatter_prim_model_a._as_string`, set the same for
 ```
 
 Now you `Defaults` section should look like this:
-![](./images/defaultPrimB.png)
+
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/defaultPrimB.png?raw=true)
+
 
 <br>
 
@@ -210,7 +214,7 @@ Now you `Defaults` section should look like this:
 
 Locate `_build_source` function in the same script.
 
-![](./images/buildSource.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/buildSource.png?raw=true)
 
 This function creates the UI for the `Source` of `Scatter Window` where you set the selected prim by clicking the "S". 
 
@@ -239,7 +243,7 @@ Add this new `ui.HStack` to the bottom of this function, underneath the existing
 
 So that your updated function looks like this:
 
-![](./images/newHstack.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/newHstack.png?raw=true)
 
 
 <br>
@@ -252,13 +256,13 @@ Save your `window.py` script and check that your Scatter Window UI updated.
 
 You have created your first piece of UI in Omniverse!
 
-![](./images/sourceUiPrimB.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/sourceUiPrimB.png?raw=true)
 
 <br>
 
 >:question: If your UI did not update or your `Scatter Window` disappeared, check the console for errors. The `Console` tab can be found here:
 >
->![](./images/console.png)
+>![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/console.png?raw=true)
 
 <br>
 
@@ -272,7 +276,7 @@ Locate the function `_build_scatter` in `window.py`.
 
 This function creates the UI for the Scatter group below `Source` in `Scatter Window`. 
 
-![](./images/buildScattercode.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/buildScattercode.png?raw=true)
 
 <br>
 
@@ -290,7 +294,7 @@ Create this new `ui.HStack`, for `Prim B Path` below the row for `Prim A Path` a
 
 So now your `_build_scatter` looks like this:
 
-![](./images/newBuildScatter.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/newBuildScatter.png?raw=true)
 
 <br>
 
@@ -300,7 +304,7 @@ Save your `window.py` script and check that your UI has updated in Omniverse.
 
 You've done it again and successfully created UI!
 
-![](./images/PathUiPrimB.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/PathUiPrimB.png?raw=true)
 
 <br>
 
@@ -310,7 +314,7 @@ Locate the function `_build_fn` in `window.py`
 
 This function builds the entire UI in the `Scatter Window` and also calls the function for when the `Scatter Prim` button is clicked.
 
-![](./images/buildFN.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/buildFN.png?raw=true)
 
 <br>
 
@@ -327,7 +331,7 @@ Create this new button underneath the `Go Button` for `Prim A`.
 
 So your `_build_fn` should look like this:
 
-![](./images/newGo.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/newGo.png?raw=true)
 
 <br>
 
@@ -337,7 +341,7 @@ Save `window.py` and check that your UI has been updated in Omniverse.
 
 You've created a new button, great job!
 
-![](./images/ButtonUi.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/ButtonUi.png?raw=true)
 
 <br>
 
@@ -367,13 +371,13 @@ You've created a new button, great job!
 >
 >So now your `_build_scatter` function should look like this:
 >
->![](./images/scaleChallengeScatter.png)
+>![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/scaleChallengeScatter.png?raw=true)
 >
 >Save `window.py` and check that the UI has updated in Omniverse.
 >
 >This is what your new UI should look like:
 >
->![](./images/scaleUi.png)
+>![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/scaleUi.png?raw=true)
 >
 >Check that it is working by setting new scale and object scatter parameters for a prim then click `Scatter Prim A`. 
 >
@@ -400,7 +404,7 @@ Scatter your prims again changing the Random parameters along the different axis
 
 >:bulb:Press play when you are finished
 >
->![](./images/playButton.png)
+>![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/playButton.png?raw=true)
 
 >#### :bell:<b>Challenge Step 9: How many marbles can you get in the jars and bowls?</b>
 >
@@ -411,7 +415,7 @@ Scatter your prims again changing the Random parameters along the different axis
 >
 >Scatter a Prim in a smaller distance and higher object count to create a large stack of prims then move over a jar or bowl before pressing play. Then watch them all fall!
 >
->![](./images/scatterMarblesChallenge.gif)
+>![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/scatterMarblesChallenge.gif?raw=true)
 >
 ></details>
 
