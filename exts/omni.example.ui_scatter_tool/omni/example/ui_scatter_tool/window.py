@@ -123,10 +123,7 @@ class ScatterWindow(ui.Window):
                     ui.Label("Prim A Path", name="attribute_name", width=self.label_width)
                     ui.StringField(model=self._scatter_prim_model_a)
                 ## Step 6.10: Add new ui.HStack Below ##  
-                with ui.HStack():
-                    ui.Label("Prim B Path", name="attribute_name", width=self.label_width)
-                    ui.StringField(model=self._scatter_prim_model_b)
-                    
+
                 with ui.HStack():
                     ui.Label("Prim Type", name="attribute_name", width=self.label_width)
                     ui.ComboBox(self._scatter_type_model)
@@ -134,11 +131,6 @@ class ScatterWindow(ui.Window):
                     ui.Label("Seed", name="attribute_name", width=self.label_width)
                     ui.IntDrag(model=self._scatter_seed_model, min=0, max=10000)
                     
-                with ui.HStack():
-                    ui.Label("Scale", name="attribute_name", width=self.label_width)
-                    for field in zip(["X:", "Y:", "Z:"], self._scale_models):
-                        ui.Label(field[0], width=0, style={"margin": 3.0})
-                        ui.FloatField(model=field[1], height=0, style={"margin": 3.0})
 
 
     def _build_axis(self, axis_id, axis_name):
