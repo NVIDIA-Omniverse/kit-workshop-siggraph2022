@@ -1,5 +1,5 @@
 
-![](./images/logo.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/logo.png?raw=true)
 
 # NVIDIA OMNIVERSE
 # How to Build Custom 3D Scene Manipulator Tools on NVIDIA Omniverse
@@ -31,7 +31,7 @@ In the dropdown,
 
 <br>
 
-![](./images/SiggraphWorkshopStageOpen.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/SiggraphWorkshopStageOpen.png?raw=true)
 
 <br>
 
@@ -44,7 +44,7 @@ Click on `Extensions` Manager Tab
 Select `Community` tab
 <br>
 
-![](./images/extensionCommunity.PNG)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/extensionCommunity.PNG?raw=true)
 
 <br>
 
@@ -52,7 +52,7 @@ Select `Community` tab
 
 Search for `Widget Info` and click on `Omni UI Scene Object Info With Widget Example`
 
-![](./images/widgetExt.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/widgetExt.png?raw=true)
 
 >#### <b>Step 2.4: Install/Enable the Extension</b>
 
@@ -72,7 +72,7 @@ You should see the following widget appear in the viewport above the `prim`:
 
 <br>
 
-![](./images/viewportWidgetEnabled.PNG)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/viewportWidgetEnabled.PNG?raw=true)
 
 <br>
 
@@ -87,7 +87,7 @@ Locate the `Play` button in the viewport and see what happens when you click it!
 <details>
 <summary>Click here to see where the button is located </summary>
 
-![](./images/playButton.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/playButton.png?raw=true)
 
 </details>
 
@@ -118,13 +118,13 @@ Click the `VS Code` icon next to the folder icon:
 
 <br>
 
-![](./images/vsCodeIcon.PNG)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/vsCodeIcon.PNG?raw=true)
 
 <br>
 
 `VS Code` will pop up separately and look like this:
 
-![](./images/vsCodeopened.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/vsCodeopened.png?raw=true)
 
 <br>
 
@@ -141,7 +141,7 @@ You are working in
 
 <br>
 
-![](./images/fileStructLocation.gif)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/fileStructLocation.gif?raw=true)
 
 <br>
 
@@ -158,7 +158,7 @@ from pxr import Gf
 
 The imports will now look like this:
 
-![](./images/newImport.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/newImport.png?raw=true)
 
 <br>
 
@@ -192,7 +192,7 @@ The `Stage` is where your prims are nested in the hierarchy.
 
 So now, `update_scale` should look like this:
 
-![](./images/GetStage.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/GetStage.png?raw=true)
 
 <br>
 
@@ -210,7 +210,7 @@ Next, add a variable underneath the stage variable for the currently selected pr
 
 `update_scale` will now look like this:
 
-![](./images/getPrim.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/getPrim.png?raw=true)
 
 >:exclamation: This prim variable should be lined up with the stage and print call above it.
 
@@ -229,7 +229,7 @@ Add the variable for the scale on the next line.
 
 Now, your completed `update_scale` function will look like this:
 
-![](./images/setScale.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/setScale.png?raw=true)
 
 >:exclamation: The scale variable should be lined up with the variables above it.
 
@@ -241,13 +241,13 @@ Save your manipulator script and check that the scale slider works in your widge
 
 >:exclamation: When you save, you may notice that the widget disappears in the viewport. This is to be expected, click the prim again to show the widget. 
 
-![](./images/scaleWorking.gif)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/scaleWorking.gif?raw=true)
 
 Your slider is now being udpated by the function `update_scale`, where you added properties that grab the `Stage` and the currently selected `prim` that the widget is displayed on, then calls the scale vector3 when the slider is moved to scale the prim in all directions.
 
 >:exclamation: Not Working? Check the `Console` to debug any errors.
 >
->![](./images/Console.png)
+>![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/Console.png?raw=true)
 
 <br>
 
@@ -304,11 +304,11 @@ How can you make your scene unique?
 
 >:bulb: Press the `Play` button when you are finished!
 >
->![](./images/playButton.png)
+>![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/playButton.png?raw=true)
 
 <br>
 
-![](./images/section3.gif)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/section3.gif?raw=true)
 
 <br>
 
@@ -343,19 +343,19 @@ How can you make your scene unique?
 >
 >In the `Extensions` tab, search for Light in the `Community` and install/enable the `Omni.Ui Scene Sample for Manipulating Select Light` extension.
 >
->![](./images/LightExt.png)
+>![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/LightExt.png?raw=true)
 >
 ><br>
 >
 >Select one of the Rect Lights in the hierarchy. 
 >
->![](./images/RectLight.png)
+>![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/RectLight.png?raw=true)
 >
 ><br>
 >
 >Use your cursor to grab the edges of the Light tool and change the intensity by dragging forward or backward.
 >
->![](./images/RectIntensity.png)
+>![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/RectIntensity.png?raw=true)
 >
 ></details>
 
