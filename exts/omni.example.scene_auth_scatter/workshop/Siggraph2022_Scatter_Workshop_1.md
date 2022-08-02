@@ -48,7 +48,7 @@ We will be getting an extension from the *Community Section* of the *Extension M
 *Community* section is where you can find other developer's extensions from the Community. 
 
 ### Step 2.3: Search for Scatter
-**Search** for "scatter" and **Click** on *Omni.ui Window Scatter*.
+**Search** for "scatter" and **Click** on *omni.example.scene_auth_scatter*.
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.ui_scatter_tool/workshop/images/communitysearch.png?raw=true)
 

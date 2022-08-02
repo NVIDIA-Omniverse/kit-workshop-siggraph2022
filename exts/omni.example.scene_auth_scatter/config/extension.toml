@@ -1,5 +1,5 @@
 [package]
-title = "omni.ui Window Scatter SIGGRAPH 2022 Workshop 1"
+title = "Scatter Tool SIGGRAPH 2022 Scene Authoring"
 description = "The full end to end example of the window"
 version = "1.0.1"
 category = "Scatter"
