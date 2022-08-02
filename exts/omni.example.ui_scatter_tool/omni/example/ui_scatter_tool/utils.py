@@ -12,6 +12,7 @@ from typing import List
 import omni.usd
 import omni.kit.commands
 from pxr import Sdf
+from pxr import Gf
 
 
 def get_selection() -> List[str]:
@@ -19,7 +20,7 @@ def get_selection() -> List[str]:
     return omni.usd.get_context().get_selection().get_selected_prim_paths()
 
 
-def duplicate_prims(transforms: List = [], prim_names: List[str] = [], target_path: str = "", mode: str = "Copy"):
+def duplicate_prims(transforms: List = [], prim_names: List[str] = [], target_path: str = "", mode: str = "Copy", scale: List[float] = [1,1,1]):
     """
     Returns generator with pairs containing transform matrices and ids to
     arrange multiple objects.
@@ -74,6 +75,10 @@ def duplicate_prims(transforms: List = [], prim_names: List[str] = [], target_pa
                 )
             else:
                 continue
+            
+            stage = usd_context.get_stage()
+            prim = stage.GetPrimAtPath(path_to)
+            trans_matrix = matrix[3]
+            new_transform = Gf.Vec3d(trans_matrix[0], trans_matrix[1], trans_matrix[2])
 
-            # Move
             omni.kit.commands.execute("TransformPrim", path=path_to, new_transform_matrix=matrix)

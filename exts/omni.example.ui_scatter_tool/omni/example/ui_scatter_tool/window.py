@@ -25,20 +25,27 @@ class ScatterWindow(ui.Window):
         # Models
         self._source_prim_model_a = ui.SimpleStringModel()
         self._scatter_prim_model_a = ui.SimpleStringModel()
+        ## Step 6.4: Add Prim Model B Here ##
         self._scatter_type_model = ComboBoxModel("Reference", "Copy", "PointInstancer")
         self._scatter_seed_model = ui.SimpleIntModel()
         self._scatter_count_models = [ui.SimpleIntModel(), ui.SimpleIntModel(), ui.SimpleIntModel()]
         self._scatter_distance_models = [ui.SimpleFloatModel(), ui.SimpleFloatModel(), ui.SimpleFloatModel()]
         self._scatter_random_models = [ui.SimpleFloatModel(), ui.SimpleFloatModel(), ui.SimpleFloatModel()]
+        self._scale_models = [ui.SimpleFloatModel(), ui.SimpleFloatModel(), ui.SimpleFloatModel()]
         
         # Defaults
         self._scatter_prim_model_a.as_string = "/World/Scatter01"
+        ## Step 6.6: Add Prim Model B Here ##
         self._scatter_count_models[0].as_int = 50
         self._scatter_count_models[1].as_int = 1
         self._scatter_count_models[2].as_int = 1
-        self._scatter_distance_models[0].as_float = 500
-        self._scatter_distance_models[1].as_float = 500
-        self._scatter_distance_models[2].as_float = 500
+        self._scatter_distance_models[0].as_float = 10
+        self._scatter_distance_models[1].as_float = 10
+        self._scatter_distance_models[2].as_float = 10
+        self._scale_models[0].as_float = 1
+        self._scale_models[1].as_float = 1
+        self._scale_models[2].as_float = 1
+        
         
         # Apply the style to all the widgets of this window
         self.frame.style = scatter_window_style
@@ -85,6 +92,7 @@ class ScatterWindow(ui.Window):
             prim_names=prim_names,
             target_path=scatter_model.as_string,
             mode=self._scatter_type_model.get_current_item().as_string,
+            scale=[self._scale_models[0].as_float, self._scale_models[1].as_float, self._scale_models[2].as_float]
         )
 
     def _build_source(self):
@@ -103,7 +111,10 @@ class ScatterWindow(ui.Window):
                         clicked_fn=lambda:self._on_get_selection(self._source_prim_model_a),
                         tooltip="Get From Selection",
                     )
-
+                    
+                ## Step 6.8: Add New HStack Below ##
+                
+                    
     def _build_scatter(self):
         """Build the widgets of the "Scatter" group"""
         with ui.CollapsableFrame("Scatter", name="group"):
@@ -111,7 +122,10 @@ class ScatterWindow(ui.Window):
                 with ui.HStack():
                     ui.Label("Prim A Path", name="attribute_name", width=self.label_width)
                     ui.StringField(model=self._scatter_prim_model_a)
-                    
+                ## Step 6.10: Add new ui.HStack Below ##  
+                with ui.HStack():
+                    ui.Label("Prim B Path", name="attribute_name", width=self.label_width)
+                    ui.StringField(model=self._scatter_prim_model_b)
                     
                 with ui.HStack():
                     ui.Label("Prim Type", name="attribute_name", width=self.label_width)
@@ -119,6 +133,12 @@ class ScatterWindow(ui.Window):
                 with ui.HStack():
                     ui.Label("Seed", name="attribute_name", width=self.label_width)
                     ui.IntDrag(model=self._scatter_seed_model, min=0, max=10000)
+                    
+                with ui.HStack():
+                    ui.Label("Scale", name="attribute_name", width=self.label_width)
+                    for field in zip(["X:", "Y:", "Z:"], self._scale_models):
+                        ui.Label(field[0], width=0, style={"margin": 3.0})
+                        ui.FloatField(model=field[1], height=0, style={"margin": 3.0})
 
 
     def _build_axis(self, axis_id, axis_name):
@@ -151,3 +171,5 @@ class ScatterWindow(ui.Window):
                 # The Go button
                 ui.Button("Scatter Prim A", clicked_fn=lambda:self._on_scatter(self._source_prim_model_a, self._scatter_prim_model_a))
                 
+                ## Step 6.12: Add Go Button Below ##
+
