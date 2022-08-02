@@ -162,7 +162,7 @@ The imports will now look like this:
 
 <br>
 
-In the variables you will set in the following steps, you will be making a call to `Graphics Foundation`, Gf, which is a package that defines classes for fundamental graphics types and operations.
+In the following steps, you will use `Graphics Foundation`, or Gf, which is a package of fundamental graphics types and operations.
 
 >#### <b>Step 6.2: Find the Function Update_Scale</b>
 
@@ -185,7 +185,7 @@ Define the `stage` variable underneath this call, like so:
             stage = self.model.usd_context.get_stage()
 ```
 
-This stage variable will use USD to get the current stage. 
+From the USD context we grab the active stage and store it into the stage variable. 
 
 The `Stage` is where your prims are nested in the hierarchy. 
 
@@ -218,7 +218,7 @@ Next, add a variable underneath the stage variable for the currently selected pr
 
 >#### <b>Step 6.5: Update the Scale </b>
 
-Add the variable for the scale on the next line.
+Add a new scale variable on the next line.
 
  In this variable you will get the scale `attribute` of the `xform` and the scale's Vector3 value, like so:
 
@@ -253,19 +253,21 @@ Your slider is now being udpated by the function `update_scale`, where you added
 
 >#### :bell:<b>Challenge Step 8: Scale Larger</b>
 >
->Can you change the function to scale the prim larger than by 1.0?
+>Can you change the function to scale the prim larger than 1.0?
 >
 ><details>
 ><summary> Click here for the answer </summary>
 >
->Set a `value` variable and multiply value by a number of your choice. We did the following:
+>Set a `value` variable and multiply a number by value. 
+>
+>For example:
 >
 >```python
 >        def update_scale(prim_name, value):
 >            if value <= 0:
 >                value = 0.01
 >            print(f"changing scale of {prim_name}, {value}")
->            ## NEW VALUE VARIABLE
+>            ## NEW VALUE VARIABLE ADDED BELOW
 >            value = 10*value
 >            stage = self.model.usd_context.get_stage()
 >            prim = stage.GetPrimAtPath(self.model._current_path)
@@ -319,15 +321,15 @@ How can you make your scene unique?
 ><details>
 ><summary> Click here for the answer </summary>
 >
->Set a number for any value inside of `scale.Set(Gf.Vec3d(value,value,value))`
+>Change the value's to 1 in `scale.Set(Gf.Vec3d(value,value,value))` of the axes that you do not want to scale in.  
 >
 >For example:
 >
 >```python
->scale.Set(Gf.Vec3d(1,value,value))
+>scale.Set(Gf.Vec3d(value,1,1))
 >```
 >
->Which, would change the scale in the X axis.
+>Which, would change the scale in the X axis as the Y and Z axis will remain at a value of 1 and the X axis will change.
 >
 ></details>
 
