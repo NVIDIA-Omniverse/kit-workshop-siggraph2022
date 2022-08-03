@@ -44,7 +44,7 @@ You can also just pass a path to create link to:
 
 This folder is ready to be pushed to any git repository. Once pushed direct link to a git repository can be added to *Omniverse Kit* extension search paths.
 
-Link might look like this: `git://github.com/[user]/[your_repo].git?branch=main&dir=exts`
+Link might look like this: `git://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022.git?branch=main&dir=exts`
 
 Notice `exts` is repo subfolder with extensions. More information can be found in "Git URL as Extension Search Paths" section of developers manual.
 
