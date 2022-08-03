@@ -74,7 +74,7 @@ Click on the extension and then click `Install` in the right console. Once insta
 <br>
 
 >#### <b>Step 2.5: Does it work? Set the Source</b>
-In the `Viewport` select a prim in the `Stage Hierarchy` and then set the Source of the prim in the Scatter Window by click the "S" in Source of `Scatter Window` .
+In the `Viewport` select a prim in the `Stage Hierarchy` and then set the Source of the prim in the Scatter Window by clicking the "S" in Source of `Scatter Window` .
 
 A `prim` is short for primitive. The prim is the fundamental unit in Omniverse. Anything imported or created in a `USD`, Universal Scene Description, scene. This includes camera, sounds, lights, meshes, etc. 
 
@@ -203,7 +203,7 @@ Below the property for `self._scatter_prim_model_a._as_string`, set the same for
         self._scatter_prim_model_b.as_string = "/World/Scatter02"
 ```
 
-Now you `Defaults` section should look like this:
+Now your `Defaults` section should look like this:
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/defaultPrimB.png?raw=true)
 
@@ -226,7 +226,6 @@ Add this new `ui.HStack` to the bottom of this function, underneath the existing
 
 
 ```python
-## 
                 with ui.HStack():
                     ui.Label("Prim B", name="attribute_name", width=self.label_width)
                     ui.StringField(model=self._source_prim_model_b)
@@ -266,7 +265,7 @@ You have created your first piece of UI in Omniverse!
 
 <br>
 
->:exclamation: A common error may be that you did not align your code properly. Check that the indents match above.
+>:exclamation: A common error may be that your code is not aligned properly. Check that the indents match the snippets in step 6.8.
 
 <br>
 
@@ -318,11 +317,9 @@ This function builds the entire UI in the `Scatter Window` and also calls the fu
 
 <br>
 
->#### <b>Step 6.12: Add the Go button for Prim B</b>
+>#### <b>Step 6.12: Add a scatter button for Prim B</b>
 
 Create this new button underneath the `Go Button` for `Prim A`.  
-
-
 
 ```python
                 # The Go button
@@ -379,7 +376,7 @@ You've created a new button, great job!
 >
 >![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/scaleUi.png?raw=true)
 >
->Check that it is working by setting new scale and object scatter parameters for a prim then click `Scatter Prim A`. 
+>Check that it is working by setting new parameters for scale and object count then click `Scatter Prim A`. 
 >
 ></details>
 
@@ -400,7 +397,12 @@ Scatter your prims using various object and distance parameters along the X, Y, 
 
 >#### <b>Step 8.2: Randomize your Parameters</b>
 
-Scatter your prims again changing the Random parameters along the different axis. 
+Scatter your prims again changing the `Random` parameters along the different axis. 
+
+What does Random do?
+The `Random` parameter in `Scatter Tool` is a scalar factor that multiples against a random number and is then added to the uniform distribution for each object.
+
+For example: If the `Distance` parameter is set to 20, each other be would distanced at 0, 20, 40, etc. If you add a `Random` parameter of 15 then it turns into 0 = (15 * random_number_gen), 20 + (15 * random_number_gen), etc.
 
 >:bulb:Press play when you are finished
 >
