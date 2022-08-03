@@ -116,6 +116,7 @@ In the *Stage*, **hold** *Ctrl key* and **select** multiple Prims.
 
 </details>
 
+# Scatter Relative to Source Prim
  
 ## Step 5: Change the Scatter functionality to Handle any Given Origin
 
@@ -279,7 +280,8 @@ transforms = scatter(
 ### Step 5.9 Hard Code Origin Position
 
 **Add** `source_prim_location=Gf.Vec3d((0,0,-500))`after `seed=self._scatter_seed_model.as_int`. 
->**Note:** Don't forget to add a comman after `seed=self._scatter_seed_model.as_int`.
+
+>**Note:** Don't forget to add a comma after `seed=self._scatter_seed_model.as_int`.
 
 ``` python
 transforms = scatter(
@@ -292,8 +294,10 @@ transforms = scatter(
 )
 ```
 
+`Gf.Vec3d((0,0,-500))` creates a 3 coordinate vector where x = 0, y = 0 and z = -500. Since Y represents up and down in the scene, X and Z are like a floor. By setting Z to -500 we are setting the scatter location -500 units along the Z axis.  
+
 ### Step 5.10: Select a Marble in the *Stage* 
-**Save** `window.py` and go back to *Omniverse Code*. Go to *Stage* and **expand** Marbles, then **select** any marble.
+**Save** `window.py` and go back to *Omniverse Code*. Go to *Stage* and **expand** Marbles, then **select** any marble. 
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.scene_auth_scatter/workshop/images/marbleselect.png?raw=true)
  
@@ -308,11 +312,10 @@ With a marble selected, **click** on the *S button* in the *Scatter Window*.
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.scene_auth_scatter/workshop/images/scatterbutton.png?raw=true)
 
-Notice how the marbles scattered to the right of the stage.
+Notice how the marbles scattered to the right of the stage. This is -500 units on the Z axis. Try and change some of the values in the Y and/or X axis as well to see where the marbles will scatter next.
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.scene_auth_scatter/workshop/images/sidescatter.png?raw=true)
 
-# Scatter Relative to Source Prim
  
 ## Step 6: Get the Location of the Source Prim
 
@@ -416,7 +419,9 @@ prim = stage.GetPrimAtPath(self._source_prim_model.as_string)
 ```
 
 ### Step 6.7: Get Source Prim's Translation
+
 Next we will **store** the prim's positional data by adding, `position = prim.GetAttribute('xformOp:translate').Get()`. After checking your work below **save** `window.py`.
+
 ``` python
 # Store the UsdContext we are attached to
 usd_context = omni.usd.get_context()
@@ -427,7 +432,13 @@ prim = stage.GetPrimAtPath(self._source_prim_model.as_string)
 # Get the focused Prim's positional data
 position = prim.GetAttribute('xformOp:translate').Get() 
 ```
+
+In order to get the location of the prim, we needed the translate value which is stored in the Xform. This gives us a X, Y, and Z of the selected prim.
+
+> **Note** The Transform (Xform) is the fundamental element of all objects in Omniverse, the Location.
+
 Check your work, it should look like this:
+
 ``` python
 def _on_scatter(self):
     """Called when the user presses the "Scatter" button"""
