@@ -11,7 +11,7 @@ See how you can build advanced tools on the modular, easily extensible Omniverse
 - Attach `scale` function to Slider Widget
 
 
-# Ui Scene_Widget Info
+# UI Scene_Widget Info
 
 ## Section I
 
@@ -94,6 +94,8 @@ Locate the `Play` button in the viewport and see what happens when you click it!
 <br>
 
 >#### :bell:<b>Challenge Step 4: Brainstorm Use Cases</b>
+><i>All Challenges in this workshop are optional</i>
+>
 >Think of 3 ways a widget could be used. For example, you noticed that the path of the prim is displayed, what else could you display about the prim in the widget? Brain storm with your peers and think of how it can be used for your industry! We will have a group discussion about this later on.
 
 <br>
@@ -252,6 +254,7 @@ Your slider is now being udpated by the function `update_scale`, where you added
 <br>
 
 >#### :bell:<b>Challenge Step 8: Scale Larger</b>
+><i>All Challenges in this workshop are optional</i>
 >
 >Can you change the function to scale the prim larger than 1.0?
 >
@@ -286,6 +289,8 @@ Your slider is now being udpated by the function `update_scale`, where you added
 <br>
 
 >#### :bell:<b>Challenge Step 9: What other properties might you want to control with the widget?</b>
+><i>All Challenges in this workshop are optional</i>
+>
 > Brainstorm 3-5 other properties that you could add to this widget. We will have an open discussion later on.
 
 <br>
@@ -315,6 +320,7 @@ How can you make your scene unique?
 <br>
 
 >#### :bell:<b>Challenge Step 11: Scale in One Axis</b>
+><i>All Challenges in this workshop are optional</i>
 >
 >Can you change the function to scale the prim in only one axis?
 >
@@ -336,6 +342,8 @@ How can you make your scene unique?
 <br>
 
 >#### :bell:<b>Challenge Step 12: Turn on the Light Manipulator</b>
+><i>All Challenges in this workshop are optional</i>
+>
 >Turn on the Light Manipulator Extension and click on the Rect Light.
 >
 >How can you change the intensity of the light using the tool?
