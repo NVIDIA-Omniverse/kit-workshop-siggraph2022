@@ -14,8 +14,7 @@ from .utils import get_selection
 from .combo_box_model import ComboBoxModel
 from .scatter import scatter
 from .utils import duplicate_prims
-import carb
-import omni.usd
+
 
 LABEL_WIDTH = 120
 SPACING = 4
@@ -133,6 +132,13 @@ class ScatterWindow(ui.Window):
                 with ui.HStack():
                     ui.Label("Seed", name="attribute_name", width=self.label_width)
                     ui.IntDrag(model=self._scatter_seed_model, min=0, max=10000)
+
+                with ui.HStack():
+                    ui.Label("Scale", name="attribute_name", width=self.label_width)
+                    for field in zip(["X:", "Y:", "Z:"], self._scale_models):
+                        ui.Label(field[0], width=0, style={"margin": 3.0})
+                        ui.FloatField(model=field[1], height=0, style={"margin": 3.0})
+
 
 
     def _build_axis(self, axis_id, axis_name):

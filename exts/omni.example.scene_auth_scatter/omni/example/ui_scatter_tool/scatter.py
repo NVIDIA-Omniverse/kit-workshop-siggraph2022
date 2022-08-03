@@ -14,7 +14,11 @@ from pxr import Gf
 
 
 def scatter(
-    count: List[int], distance: List[float], randomization: List[float], id_count: int = 1, seed: Optional[int] = None
+    count: List[int],
+    distance: List[float],
+    randomization: List[float],
+    id_count: int = 1,
+    seed: Optional[int] = None
 ):
     """
     Returns generator with pairs containing transform matrices and ids to

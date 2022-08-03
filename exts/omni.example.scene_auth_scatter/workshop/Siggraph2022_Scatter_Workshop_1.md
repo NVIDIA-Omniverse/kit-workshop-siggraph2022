@@ -48,7 +48,9 @@ We will be getting an extension from the *Community Section* of the *Extension M
 *Community* section is where you can find other developer's extensions from the Community. 
 
 ### Step 2.3: Search for Scatter
-**Search** for "scatter" and **Click** on *omni.example.scene_auth_scatter*.
+**Search** for "scatter" and **Click** on the extension with the subtitle *omni.example.scene_auth_scatter*.
+
+> **Note:** There are two different scatter tools. Please double check that the one installed has the subtitle: *omni.example.scene_auth_scatter*.
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.scene_auth_scatter/workshop/images/communitysearch.png?raw=true)
 
@@ -59,7 +61,7 @@ We will be getting an extension from the *Community Section* of the *Extension M
 
 ## Step 3: Using the Extension
 
-With the extension enabled, try using it. 
+With the extension enabled, try the following steps.
 
 ### Step 3.1: Select a Prim
 
@@ -71,7 +73,7 @@ We recommend using any of these Prims:
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.scene_auth_scatter/workshop/images/primstoselect.png?raw=true)
 
-#### Step 3.2: Copy Prim Path to Scatter Window
+#### Step 3.2: Set Prim Path to Scatter Window
 With the selected Prim, **click** the *S button* in the *Scatter Window*.
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.scene_auth_scatter/workshop/images/clickS.png?raw=true)
@@ -80,6 +82,15 @@ With the selected Prim, **click** the *S button* in the *Scatter Window*.
 At the bottom of the *Scatter Window*, **click** the *Scatter button*
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.scene_auth_scatter/workshop/images/scatterbutton.png?raw=true)
+
+### Step 3.4: Undo Scatter
+
+Find the `Scatter01` folder in `Stage` and left-click on the folder then right-click to delete or hit the `delete` button on your keyboard. 
+
+`Stage` is the panel that allows you to see all the assets in your current `USD`, or Universal Scene Description. It lists the prims in heirarchical order.
+
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/deletescatter.gif?raw=true)
+
 
   
 ## Challenge Step 4: What else can you do with the Scatter Extension
@@ -108,7 +119,7 @@ In the *Stage*, **hold** *Ctrl key* and **select** multiple Prims.
  
 ## Step 5: Change the Scatter functionality to Handle any Given Origin
 
-To use any origin we will be modifying the scatter functionality to recieve a position.
+To use any origin we will be modifying the scatter functionality to recieve a position. The current scatter tool sets scatter at world origin (0,0,0). This is inconvient when there are prims far away from origin.
 
 ### Step 5.1: Open the Extension in Visual Studio Code
 From the *Scatter Extension*, **Click** the Visual Studio Icon.
@@ -124,7 +135,7 @@ A new instance of *Visual Studio Code* will open up.
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.scene_auth_scatter/workshop/images/scatterpy.png?raw=true)
 
-### Step 5.3: Add New Origin Paramter to `scatter()`
+### Step 5.3: Add New Origin Parameter to `scatter()`
 **Add** `source_prim_location: List[float] = (0,0,0)` as a parameter for `scatter()`
 
 ``` python
@@ -171,7 +182,12 @@ result.SetTranslate(
 
 ``` python 
 def scatter(
-    count: List[int], distance: List[float], randomization: List[float], id_count: int = 1, seed: Optional[int] = None, source_prim_location: List[float] = (0,0,0)
+    count: List[int],
+    distance: List[float],
+    randomization: List[float],
+    id_count: int = 1,
+    seed: Optional[int] = None,
+    source_prim_location: List[float] = (0,0,0)
 ):
     """
     Returns generator with pairs containing transform matrices and ids to
@@ -272,7 +288,7 @@ transforms = scatter(
     randomization=[m.as_float for m in self._scatter_random_models],
     id_count=len(prim_names),
     seed=self._scatter_seed_model.as_int,
-
+    source_prim_location=Gf.Vec3d((0,0,-500))
 )
 ```
 
@@ -281,10 +297,16 @@ transforms = scatter(
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.scene_auth_scatter/workshop/images/marbleselect.png?raw=true)
  
-### Step 5.11: Copy the Selected Marble's Path to the Scatter Extension
+### Step 5.11: Set the Selected Marble's Path to the Scatter Extension
 With a marble selected, **click** on the *S button* in the *Scatter Window*.
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.scene_auth_scatter/workshop/images/clickS.png?raw=true)
+
+### Step 5.12: Scatter the Marbles
+**Scroll** to the bottom of the extension and **click** the *Scatter button*.
+> **Note**: If you do not see the *Scatter button* **scroll down** in the *extension window* or **expand** the *extension window* using the right corner. 
+
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.scene_auth_scatter/workshop/images/scatterbutton.png?raw=true)
 
 Notice how the marbles scattered to the right of the stage.
 
@@ -463,7 +485,7 @@ transforms = scatter(
 ```
  
 ### Step 7.2: Pass the Location to `scatter()`
-After `seed=self._scatter_seed_model.as_int`, **add** a comma then on a new line **add** the line `source_prim_location=position`
+After `seed=self._scatter_seed_model.as_int`, **replace** the line `source_prim_location=Gf.Vec3d(0,0,-500)` with `source_prim_location=position`  
 
 
 ``` python
@@ -477,6 +499,12 @@ transforms = scatter(
 )
 ```
 
+### Step 7.3: Test it out
+Save `window.py` and head back into Omniverse. **Scatter** a prim in the stage. Then **scatter** a different prim. Notice how they will only scatter to the corresponding prim's location. 
+
+### Step 7.4: Hit Play
+Play out the scene! 
+
 ## Challenge Step 8.1: Add Randomization to Scatter
 Currently, when the *Scatter button* is pressed it will scatter uniformly. Try to change up the code to allow for random distrubtion. Expand the *Hint* section if you get stuck.
 
@@ -485,13 +513,13 @@ Currently, when the *Scatter button* is pressed it will scatter uniformly. Try t
 <details>
 <summary>Hint</summary>
 
-### Challenge Step 7.1.1: Open `scatter.py`
+### Challenge Step 8.1.1: Open `scatter.py`
 
 **Open** `scatter.py` and *locate* `scatter()`.
 
  
 ### Challenge Step 8.1.2: Add Random Value
-**Locate** where we generate our Vec3d. **Modify** the first passed parameter as `source_prim_location[0] + (x + random.random() * randomization[0]),`
+**Locate** where we generate our Vec3d / `result.SetTranslate()`. **Modify** the first passed parameter as `source_prim_location[0] + (x + random.random() * randomization[0]),`
 
 ``` python
 result.SetTranslate(
@@ -512,14 +540,14 @@ result.SetTranslate(
 result.SetTranslate(
     Gf.Vec3d(
         source_prim_location[0] + (x + random.random() * randomization[0]),
-        source_prim_location[1] + (y + random.random() * randomization[1],
-        source_prim_location[2] + (z + random.random() * randomization[2],
+        source_prim_location[1] + (y + random.random() * randomization[1]),
+        source_prim_location[2] + (z + random.random() * randomization[2]),
     )
 )
 ```
 
 ### Challenge Step 8.1.4: Change Random Value
-**Go back** to Omniverse and **modify** the *Random* parameter in the *Scatter Window*.
+**Save** `scatter.py` and **go back** to Omniverse. **Modify** the *Random* parameter in the *Scatter Window*.
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.scene_auth_scatter/workshop/images/random.png?raw=true)
 
