@@ -81,4 +81,4 @@ def duplicate_prims(transforms: List = [], prim_names: List[str] = [], target_pa
             trans_matrix = matrix[3]
             new_transform = Gf.Vec3d(trans_matrix[0], trans_matrix[1], trans_matrix[2])
 
-            omni.kit.commands.execute("TransformPrim", path=path_to, new_transform_matrix=matrix)
+            omni.kit.commands.execute("TransformPrimSRT", path=path_to, new_translation=new_transform, new_scale=scale)
