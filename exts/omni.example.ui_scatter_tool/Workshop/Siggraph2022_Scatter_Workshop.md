@@ -123,6 +123,8 @@ Find the `Scatter01` folder in `Stage` and left-click on the folder then right-c
 <br>
 
 >#### :bell:<b>Challenge Step 5: Brainstorm Use Cases</b>
+><i>All Challenges in this workshop are optional</i>
+>
 >Think of 3 ways this tool could be used. Brain storm with your peers and think of how it can be used for your industry!
 
 <br>
@@ -343,6 +345,7 @@ You've created a new button, great job!
 <br>
 
 >#### :bell:<b>Challenge Step 7: Set Scale Parameters in the UI</b>
+><i>All Challenges in this workshop are optional</i>
 >
 >The function to scale the prim on scatter already exists in the code, can you create the UI for it? 
 >
@@ -354,6 +357,8 @@ You've created a new button, great job!
 ><summary> Click here for the answer </summary>
 >
 >### Challenge Step 7.1: Build UI for Scale
+><i>All Challenges in this workshop are optional</i>
+>
 >Locate `_build_scatter` in `window.py` as we did in step 6.9.
 >
 >Add this new row for Scale at the bottom of the function:
@@ -409,6 +414,7 @@ For example: If the `Distance` parameter is set to 20, each other be would dista
 >![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/playButton.png?raw=true)
 
 >#### :bell:<b>Challenge Step 9: How many marbles can you get in the jars and bowls?</b>
+><i>All Challenges in this workshop are optional</i>
 >
 >How can you use the scatter tool to drop as many marbles into the jars and bowls?
 >
