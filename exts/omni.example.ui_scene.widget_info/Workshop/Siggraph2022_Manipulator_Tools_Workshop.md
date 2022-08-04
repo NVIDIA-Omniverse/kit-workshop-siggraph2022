@@ -17,11 +17,12 @@ See how you can build advanced tools on the modular, easily extensible Omniverse
 
 ### Step 1: Open the Workshop Stage
 
->#### <b>Step 1.1: Open the Bookmarks Tab</b>
+#### <b>Step 1.1: Open the Bookmarks Tab</b>
 
 Find the `Content` tab at the bottom of the Omniverse Code Console and locate the `Bookmarks` drop down.
 
->#### <b>Step 1.2: Get our Project File</b>
+#### <b>Step 1.2: Get our Project File</b>
+
 In the dropdown,
 -  Locate the `Siggraph2022_Stage` folder. 
 
@@ -36,10 +37,11 @@ In the dropdown,
 <br>
 
 ### Step 2: Install the Widget Extension
-> #### <b>Step 2.1: Open the Extensions Tab</b>
+#### <b>Step 2.1: Open the Extensions Tab</b>
+
 Click on `Extensions` Manager Tab 
 
->#### <b>Step 2.2: Filter by Commnuity Extension</b>
+#### <b>Step 2.2: Filter by Commnuity Extension</b>
 
 Select `Community` tab
 <br>
@@ -48,21 +50,21 @@ Select `Community` tab
 
 <br>
 
->#### <b>Step 2.3: Search for Widget Info</b>
+#### <b>Step 2.3: Search for Widget Info</b>
 
 Search for `Widget Info` and click on `Omni UI Scene Object Info With Widget Example`
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/widgetExt.png?raw=true)
 
->#### <b>Step 2.4: Install/Enable the Extension</b>
+#### <b>Step 2.4: Install/Enable the Extension</b>
 
 Click on the extension and then click `Install` in the right console. Once installed, enable the extension. 
 
->:exclamation: You may get a warning that this extension is not verified. It is safe to install this extension.
+><span>&#10071;</span> You may get a warning that this extension is not verified. It is safe to install this extension.
 
 <br>
 
->#### <b>Step 2.5: Check that the Widget is Working</b>
+#### <b>Step 2.5: Check that the Widget is Working</b>
 
 Navigate to `Viewport` then select a `prim` in the hierarchy. 
 
@@ -76,14 +78,16 @@ You should see the following widget appear in the viewport above the `prim`:
 
 <br>
 
->:question: Did you notice?
+><span>&#10067;</span> Did you notice?
 >- The path of the prim is displayed in the widget.
 >- There is a scale slider in the widget but it doesn't work! We will fix this in the next section.
 
 <br>
 
->#### <b>Step 3: Find the Play Button</b>
+#### <b>Step 3: Find the Play Button</b>
+
 Locate the `Play` button in the viewport and see what happens when you click it! Don't forget to hit the `Stop` button when you are finished.
+
 <details>
 <summary>Click here to see where the button is located </summary>
 
@@ -93,7 +97,7 @@ Locate the `Play` button in the viewport and see what happens when you click it!
 
 <br>
 
->#### :bell:<b>Challenge Step 4: Brainstorm Use Cases</b>
+>#### <span>&#129504;</span><b>Challenge Step 4: Brainstorm Use Cases</b>
 ><i>All Challenges in this workshop are optional</i>
 >
 >Think of 3 ways a widget could be used. For example, you noticed that the path of the prim is displayed, what else could you display about the prim in the widget? Brain storm with your peers and think of how it can be used for your industry! We will have a group discussion about this later on.
@@ -102,7 +106,7 @@ Locate the `Play` button in the viewport and see what happens when you click it!
 
 <br>
 
->### :no_entry_sign: Stop here and wait to move on to Section II
+>### <span>&#9940;</span> Stop here and wait to move on to Section II
 
 <br>
 
@@ -110,7 +114,7 @@ Locate the `Play` button in the viewport and see what happens when you click it!
 
 ### Step 5: Find your Work Files
 
->#### <b>Step 5.1: Open Visual Studio</b>
+#### <b>Step 5.1: Open Visual Studio</b>
 
 Go to the `Extensions` tab.
 
@@ -131,7 +135,7 @@ Click the `VS Code` icon next to the folder icon:
 <br>
 
 
->#### <b>Step 5.2: Locate Manipulator Script</b>
+#### <b>Step 5.2: Locate Manipulator Script</b>
 
 Locate the files you need for this session in the left column drop-down menus at:
 
@@ -166,7 +170,7 @@ The imports will now look like this:
 
 In the following steps, you will use `Graphics Foundation`, or Gf, which is a package of fundamental graphics types and operations.
 
->#### <b>Step 6.2: Find the Function Update_Scale</b>
+#### <b>Step 6.2: Find the Function Update_Scale</b>
 
 Locate the following function at the bottom of the script:
 
@@ -177,7 +181,7 @@ Locate the following function at the bottom of the script:
 
 This function updates the slider in the Widget. However, it currently does not have any logic to update the scale. Let's start adding the code we need to get that working!
 
->#### <b>Step 6.3: Get the Current Stage</b>
+#### <b>Step 6.3: Get the Current Stage</b>
 
 Inside of `update_scale` function, find the `print` call.
 
@@ -198,11 +202,11 @@ So now, `update_scale` should look like this:
 
 <br>
 
->:exclamation: Make sure your new stage variable is lined up with the print call. If it is not, add or delete tabs until it is.
+><span>&#10071;</span> Make sure your new stage variable is lined up with the print call. If it is not, add or delete tabs until it is.
 
 <br>
 
->#### <b>Step 6.4: Get the Selected Prim</b>
+#### <b>Step 6.4: Get the Selected Prim</b>
 
 Next, add a variable underneath the stage variable for the currently selected prim:
 
@@ -214,11 +218,11 @@ Next, add a variable underneath the stage variable for the currently selected pr
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/getPrim.png?raw=true)
 
->:exclamation: This prim variable should be lined up with the stage and print call above it.
+><span>&#10071;</span> This prim variable should be lined up with the stage and print call above it.
 
 <br>
 
->#### <b>Step 6.5: Update the Scale </b>
+#### <b>Step 6.5: Update the Scale </b>
 
 Add a new scale variable on the next line.
 
@@ -233,21 +237,22 @@ Now, your completed `update_scale` function will look like this:
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/setScale.png?raw=true)
 
->:exclamation: The scale variable should be lined up with the variables above it.
+><span>&#10071;</span>The scale variable should be lined up with the variables above it.
 
 <br>
 
 ### Step 7: Did it work?
-> #### <b>Step 7.1: Save and Test! </b>
+#### <b>Step 7.1: Save and Test! </b>
+
 Save your manipulator script and check that the scale slider works in your widget! 
 
->:exclamation: When you save, you may notice that the widget disappears in the viewport. This is to be expected, click the prim again to show the widget. 
+><span>&#10071;</span> When you save, you may notice that the widget disappears in the viewport. This is to be expected, click the prim again to show the widget. 
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/scaleWorking.gif?raw=true)
 
 Your slider is now being udpated by the function `update_scale`, where you added properties that grab the `Stage` and the currently selected `prim` that the widget is displayed on, then calls the scale vector3 when the slider is moved to scale the prim in all directions.
 
->:exclamation: Not Working? Check the `Console` to debug any errors.
+><span>&#10071;</span> Not Working? Check the `Console` to debug any errors.
 >
 >![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/Console.png?raw=true)
 
@@ -288,14 +293,14 @@ Your slider is now being udpated by the function `update_scale`, where you added
 
 <br>
 
->#### :bell:<b>Challenge Step 9: What other properties might you want to control with the widget?</b>
+>#### <span>&#129504;</span><b>Challenge Step 9: What other properties might you want to control with the widget?</b>
 ><i>All Challenges in this workshop are optional</i>
 >
 > Brainstorm 3-5 other properties that you could add to this widget. We will have an open discussion later on.
 
 <br>
 
->### :no_entry_sign: Stop here and wait to move on to Section III
+>### <span>&#9940;</span> Stop here and wait to move on to Section III
 
 <br>
 
@@ -303,13 +308,13 @@ Your slider is now being udpated by the function `update_scale`, where you added
 
 ### Step 10: Create your scene
 
->#### <b>Step 10.1: Scale Everything!</b>
+#### <b>Step 10.1: Scale Everything!</b>
 
 Play around in your scene and scale the prims in various sizes, such as a very large marble or a tiny jar. 
 
 How can you make your scene unique?
 
->:bulb: Press the `Play` button when you are finished!
+><span>&#11088;</span> Press the `Play` button when you are finished!
 >
 >![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/playButton.png?raw=true)
 
@@ -319,7 +324,7 @@ How can you make your scene unique?
 
 <br>
 
->#### :bell:<b>Challenge Step 11: Scale in One Axis</b>
+>#### <span>&#129504;</span><b>Challenge Step 11: Scale in One Axis</b>
 ><i>All Challenges in this workshop are optional</i>
 >
 >Can you change the function to scale the prim in only one axis?
@@ -341,7 +346,7 @@ How can you make your scene unique?
 
 <br>
 
->#### :bell:<b>Challenge Step 12: Turn on the Light Manipulator</b>
+>#### <span>&#129504;</span><b>Challenge Step 12: Turn on the Light Manipulator</b>
 ><i>All Challenges in this workshop are optional</i>
 >
 >Turn on the Light Manipulator Extension and click on the Rect Light.
