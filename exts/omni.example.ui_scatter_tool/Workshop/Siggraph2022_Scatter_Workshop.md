@@ -355,23 +355,30 @@ You've created a new button, great job!
 
 Set the Source for Prim A and Prim B, just as you did in Step 2.5 
 
+
+
+![](./images/setPrimA.png)
+
+<br>
+
 Make sure that you have set Prim B as a different Prim than Prim A.
 
 For example, set Prim A as Twist Marble and set Prim B as Gummy Bear.
 
-![]()
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/setPrimB.png?raw=true)
 
 <br>
 
 #### <b>Step 7.2: Set Parameters for X, Y, Z Axis</b>
 
-Set X axis object count to 10 with a distance of 25.
+Set X axis object count to 5 with a distance of 25.
 
-Set Y axis object count to 2 with a distance of 25.
+Set Y axis object count to 4 with a distance of 25.
 
-Set Z axis object count to 2 with distance of 25.
+Set Z axis object count to 4 with distance of 25.
 
-![]()
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/objectCount.png?raw=true)
+
 
 <br>
 
@@ -379,11 +386,11 @@ Set Z axis object count to 2 with distance of 25.
 
 Click Scatter Prim A button. 
 
-You should see a quad of Prim A appear on the screen and a folder in `Stage` labeled `Scatter 01`.
+You should see a quad of Prim A appear on the screen and a folder in `Stage` labeled `Scatter01`.
 
-Select `Scatter 01` and move the quad of Prims over the serving bowl in the viewport.
+Select the prims in `Scatter 01` by selecting the first prim in the folder and then <b>shift+click</b> the last prim in the folder then move the quad of Prims over the serving bowl in the viewport.
 
-![]()
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/scatterA.gif?raw=true)
 
 <br>
 
@@ -393,9 +400,9 @@ Click Scatter Prim B button.
 
 You should see a quad of Pim B appear on the screen and a folder in `Stage` labeled `Scatter 02`.
 
-Select `Scatter 02` and move the quad of Prims over the glass jar.
+Leave these prims where they originated. 
 
-![]()
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/scatterB.png?raw=true)
 
 <br>
 
@@ -405,7 +412,7 @@ Press `Play` and watch the Prims fall into the bowl and jar!
 
 Press `Stop` when you are done.
 
-![]()
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_3/exts/omni.example.ui_scatter_tool/Workshop/images/playScatter.gif?raw=true)
 
 <br>
 
