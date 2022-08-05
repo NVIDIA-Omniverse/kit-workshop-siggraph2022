@@ -1,4 +1,4 @@
-![](images/logo.png)
+![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.scene_auth_scatter/workshop/images/logo.png?raw=true)
  
 # NVIDIA OMNIVERSE
 
