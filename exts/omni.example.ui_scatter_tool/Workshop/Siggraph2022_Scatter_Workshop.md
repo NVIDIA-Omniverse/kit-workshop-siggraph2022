@@ -12,6 +12,10 @@ Become a master in UI with a hands-on deep dive into NVIDIA Omniverse Kit’s po
 - Create Columns and Rows
 - Create a button
 
+<video width="320" height="240" controls>
+  <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-05-v1/BuildUIIntro.mp4" type="video/mp4">
+</video>
+
 # Omni.ui_Window Scatter
 
 ## Section I
