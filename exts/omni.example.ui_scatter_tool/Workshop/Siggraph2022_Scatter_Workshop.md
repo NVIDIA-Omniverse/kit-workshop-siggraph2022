@@ -12,13 +12,17 @@ Become a master in UI with a hands-on deep dive into NVIDIA Omniverse Kit’s po
 - Create Columns and Rows
 - Create a button
 
-<video width="320" height="240" controls>
-  <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-05-v1/BuildUIIntro.mp4" type="video/mp4">
+<video width="560" height="315" controls>
+  <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-05-v1/BuildUISection1.mp4" type="video/mp4">
 </video>
 
 # Omni.ui_Window Scatter
 
 ## Section I
+
+<video width="560" height="315" controls>
+  <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-05-v1/BuildUIIntro.mp4" type="video/mp4">
+</video>
 
 ### Step 1: Open the Workshop Stage
 
@@ -144,6 +148,14 @@ Find the `Scatter01` folder in `Stage` and left-click on the folder then right-c
 <br>
 
 ## Section II
+
+<video width="560" height="315" controls>
+  <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-05-v1/BuildUIIntroSection2.mp4" type="video/mp4">
+</video>
+
+<video width="560" height="315" controls>
+  <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-05-v1/buildUISection2.mp4" type="video/mp4">
+</video>
 
 ### Step 6: Add another Source to the UI
 
@@ -469,6 +481,10 @@ Press `Stop` when you are done.
 <br>
 
 ##  Section III
+
+<video width="560" height="315" controls>
+  <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-05-v1/buildUISection3.mp4" type="video/mp4">
+</video>
 
 ### Step 9: Make your scene
 
