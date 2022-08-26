@@ -13,7 +13,7 @@ Become a master in UI with a hands-on deep dive into NVIDIA Omniverse Kit’s po
 - Create a button
 
 <video width="560" height="315" controls>
-  <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-05-v1/BuildUISection1.mp4" type="video/mp4">
+  <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-05-v1/BuildUIIntro.mp4" type="video/mp4">
 </video>
 
 # Omni.ui_Window Scatter
@@ -21,7 +21,7 @@ Become a master in UI with a hands-on deep dive into NVIDIA Omniverse Kit’s po
 ## Section I
 
 <video width="560" height="315" controls>
-  <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-05-v1/BuildUIIntro.mp4" type="video/mp4">
+  <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-05-v1/BuildUISection1.mp4" type="video/mp4">
 </video>
 
 ### Step 1: Open the Workshop Stage
