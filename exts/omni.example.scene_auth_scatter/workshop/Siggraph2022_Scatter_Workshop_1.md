@@ -11,6 +11,12 @@ See how to easily create your own custom scene layout tool with the modular Omni
 - Utilize Command Executions
 - Create a feature to Scatter from a Prim's origin
  
+<source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/3DLayoutToolsIntro.mp4" type="video/mp4">
+
+# Section I
+
+<source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/3DLayoutToolsSection1.mp4" type="video/mp4">
+
 # Open Stage and Get Extension from Community
  
 ## Step 1: Prepare your Environment
@@ -115,6 +121,15 @@ In the *Stage*, **hold** *Ctrl key* and **select** multiple Prims.
 **Repeat** steps `3.2` and `2.3`.
 
 </details>
+
+
+# Section II
+
+
+<source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/3DLayoutToolsSection2Intro.mp4" type="video/mp4">
+
+
+<source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/3DLayoutToolsWorkshop2.mp4" type="video/mp4">
 
 # Scatter Relative to Source Prim
  
@@ -575,6 +590,12 @@ result.SetTranslate(
 </details>
 
 <br>
+
+
+# Section III
+
+
+<source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/3DLayoutToolsWorkshop3.mp4" type="video/mp4">
 
 # Scatter the Objects
  
