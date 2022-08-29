@@ -24,24 +24,21 @@ See how you can build advanced tools on the modular, easily extensible Omniverse
  
 ### Step 1: Open the Workshop Stage
 
-#### <b>Step 1.1: Open the Bookmarks Tab</b>
+#### <b>Step 1.1: Download the Stage from the Link Provided</b>
 
-Find the `Content` tab at the bottom of the Omniverse Code Console and locate the `Bookmarks` drop down.
+[Stage Link](https://dli-lms.s3.amazonaws.com/assets/x-ov-05-v1/Stage.zip)
 
-#### <b>Step 1.2: Get our Project File</b>
+#### <b> Step 1.2: Unzip Stage Using Extract All...
 
-In the dropdown,
--  Locate the `Siggraph2022_Stage` folder. 
+This creates an unzipped file folder called `Stage`.
 
-- Open the `Workshop_Manipulator_Tools` folder.
+#### <b> Step 1.3: Open Stage in Omniverse
 
-- Open `Siggraph2022_Stage.usd`
-
-<br>
-
-![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/SiggraphWorkshopStageOpen.png?raw=true)
-
-<br>
+Navigate inside Omniverse Code's `Content tab` to the stage file's location on your system.
+  
+(i.e. C:/Users/yourName/Downloads/Stage)
+ 
+**Double Click** `Siggraph2022_Stage.usd` in the center window pane of the `Content tab` at the bottom of the Omniverse Code Console and it will appear in the viewport.
 
 ### Step 2: Install the Widget Extension
 #### <b>Step 2.1: Open the Extensions Tab</b>
