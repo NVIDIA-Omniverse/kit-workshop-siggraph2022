@@ -11,12 +11,16 @@ See how to easily create your own custom scene layout tool with the modular Omni
 - Utilize Command Executions
 - Create a feature to Scatter from a Prim's origin
  
+<video width="560" height="315" controls> 
 <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/3DLayoutToolsIntro.mp4" type="video/mp4">
-
+</video>
+ 
 # Section I
 
+<video width="560" height="315" controls>
 <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/3DLayoutToolsSection1.mp4" type="video/mp4">
-
+</video>
+ 
 # Open Stage and Get Extension from Community
  
 ## Step 1: Prepare your Environment
@@ -125,12 +129,14 @@ In the *Stage*, **hold** *Ctrl key* and **select** multiple Prims.
 
 # Section II
 
-
+<video width="560" height="315" controls>
 <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/3DLayoutToolsSection2Intro.mp4" type="video/mp4">
+</video>
 
-
+<video width="560" height="315" controls>
 <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/3DLayoutToolsWorkshop2.mp4" type="video/mp4">
-
+</video>
+ 
 # Scatter Relative to Source Prim
  
 ## Step 5: Change the Scatter functionality to Handle any Given Origin
@@ -594,9 +600,10 @@ result.SetTranslate(
 
 # Section III
 
-
+<video width="560" height="315" controls>
 <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/3DLayoutToolsWorkshop3.mp4" type="video/mp4">
-
+</video>
+ 
 # Scatter the Objects
  
 ## Step 9: Scatter a Marble
