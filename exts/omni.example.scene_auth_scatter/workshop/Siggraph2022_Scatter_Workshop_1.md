@@ -22,26 +22,24 @@ See how to easily create your own custom scene layout tool with the modular Omni
 </video>
  
 # Open Stage and Get Extension from Community
+
+## Step 1: Open the Workshop Stage
+
+### <b>Step 1.1: Download the Stage from the Link Provided</b>
+
+[Stage Link](https://dli-lms.s3.amazonaws.com/assets/x-ov-05-v1/Stage.zip)
+
+### <b> Step 1.2: Unzip Stage Using Extract All...
+
+This creates an unzipped file folder called `Stage`.
+
+### <b> Step 1.3: Open Stage in Omniverse
+
+Navigate inside Omniverse Code's `Content tab` to the stage file's location on your system.
+  
+(i.e. C:/Users/yourName/Downloads/Stage)
  
-## Step 1: Prepare your Environment
-
-For this workshop, we have prepared a small stage in which you can play around in and experiment with the extension we will create.
-
-### Step 1.1: Find Bookmarks tab
-
-**Find** the *Content tab* at the bottom of Omniverse Code and **locate** the `Bookmarks` drop down.
-
-### Step 1.2: Open Folder
-
-In the dropdown, **locate** the `Siggraph2022_Stage` folder. 
-
-**Open** the `Workshop_Layout_Tools` folder.
-
-### Step 1.3: Open the Stage
-
-**Open** `Siggraph2022_Stage.usd`
-
-![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.scene_auth_scatter/workshop/images/workshopstage.png?raw=true)
+**Double Click** `Siggraph2022_Stage.usd` in the center window pane of the `Content tab` at the bottom of the Omniverse Code Console and it will appear in the viewport.
  
 ## Step 2: Adding the Extension
 
