@@ -12,7 +12,7 @@ See how you can build advanced tools on the modular, easily extensible Omniverse
 
 <video width="560" height="315" controls>
 <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/sceneManipulatorIntro.mp4" type="video/mp4">
-<video>
+</video>
  
 # UI Scene_Widget Info
 
