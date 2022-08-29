@@ -10,10 +10,14 @@ See how you can build advanced tools on the modular, easily extensible Omniverse
 - Enable Extension
 - Attach `scale` function to Slider Widget
 
+<source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/sceneManipulatorIntro.mp4" type="video/mp4">
 
 # UI Scene_Widget Info
 
 ## Section I
+
+
+<source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/sceneManipulator1.mp4" type="video/mp4">
 
 ### Step 1: Open the Workshop Stage
 
@@ -111,6 +115,12 @@ Locate the `Play` button in the viewport and see what happens when you click it!
 <br>
 
 ## Section II
+
+
+<source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/sceneManipulator2Intro.mp4" type="video/mp4">
+
+
+<source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/sceneManipulator2.mp4" type="video/mp4">
 
 ### Step 5: Find your Work Files
 
@@ -305,6 +315,9 @@ Your slider is now being udpated by the function `update_scale`, where you added
 <br>
 
 ## Section III:
+ 
+ 
+<source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/sceneManipulator3.mp4" type="video/mp4">
 
 ### Step 10: Create your scene
 
