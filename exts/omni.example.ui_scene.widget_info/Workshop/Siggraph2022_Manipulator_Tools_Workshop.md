@@ -10,15 +10,18 @@ See how you can build advanced tools on the modular, easily extensible Omniverse
 - Enable Extension
 - Attach `scale` function to Slider Widget
 
+<video width="560" height="315" controls>
 <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/sceneManipulatorIntro.mp4" type="video/mp4">
-
+<video>
+ 
 # UI Scene_Widget Info
 
 ## Section I
 
-
+<video width="560" height="315" controls>
 <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/sceneManipulator1.mp4" type="video/mp4">
-
+</video>
+ 
 ### Step 1: Open the Workshop Stage
 
 #### <b>Step 1.1: Open the Bookmarks Tab</b>
@@ -116,12 +119,14 @@ Locate the `Play` button in the viewport and see what happens when you click it!
 
 ## Section II
 
-
+<video width="560" height="315" controls>
 <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/sceneManipulator2Intro.mp4" type="video/mp4">
+ </video>
 
-
+ <video width="560" height="315" controls>
 <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/sceneManipulator2.mp4" type="video/mp4">
-
+ </video>
+  
 ### Step 5: Find your Work Files
 
 #### <b>Step 5.1: Open Visual Studio</b>
@@ -316,9 +321,10 @@ Your slider is now being udpated by the function `update_scale`, where you added
 
 ## Section III:
  
- 
+ <video width="560" height="315" controls>
 <source src="https://d36m44n9vdbmda.cloudfront.net/assets/x-ov-06-v1/sceneManipulator3.mp4" type="video/mp4">
-
+ </video>
+  
 ### Step 10: Create your scene
 
 #### <b>Step 10.1: Scale Everything!</b>
