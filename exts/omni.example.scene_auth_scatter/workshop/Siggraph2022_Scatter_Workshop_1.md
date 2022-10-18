@@ -747,4 +747,4 @@ omni.kit.commands.execute("TransformPrimSRT", path=path_to, new_translation=new_
 ## Congratulations!
 You have completed this workshop! We hope you have enjoyed learning and playing with Omniverse! 
 
-[Join us on Discord to extend the conversation!](https://discord.gg/BVFQEeXe)
+[Join us on Discord to extend the conversation!](https://discord.com/invite/nvidiaomniverse)

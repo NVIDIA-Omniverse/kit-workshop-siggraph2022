@@ -396,4 +396,4 @@ How can you make your scene unique?
 ## Congratulations!
 You have completed this workshop! We hope you have enjoyed learning and playing with Omniverse! 
 
-[Join us on Discord to extend the conversation!](https://discord.gg/BVFQEeXe)
+[Join us on Discord to extend the conversation!](https://discord.com/invite/nvidiaomniverse)

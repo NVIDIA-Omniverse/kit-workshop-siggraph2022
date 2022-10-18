@@ -523,4 +523,4 @@ For example: If the `Distance` parameter is set to 20, each other be would dista
 ## Congratulations! 
 You have completed this workshop! We hope you have enjoyed learning and playing in Omniverse!
 
-[Join us on Discord to extend the conversation!](https://discord.gg/BVFQEeXe)
+[Join us on Discord to extend the conversation!](https://discord.com/invite/nvidiaomniverse)
