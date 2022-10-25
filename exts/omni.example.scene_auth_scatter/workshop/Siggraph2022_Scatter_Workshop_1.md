@@ -27,7 +27,7 @@ See how to easily create your own custom scene layout tool with the modular Omni
 
 ### <b>Step 1.1: Download the Stage from the Link Provided</b>
 
-[Stage Link](https://dli-lms.s3.amazonaws.com/assets/x-ov-05-v1/Stage.zip)
+[Stage Link](https://dli-lms.s3.amazonaws.com/assets/x-ov-02-v1/Stage.zip)
 
 ### <b> Step 1.2: Unzip Stage Using Extract All...
 

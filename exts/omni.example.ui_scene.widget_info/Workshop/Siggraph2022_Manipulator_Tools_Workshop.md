@@ -26,7 +26,7 @@ See how you can build advanced tools on the modular, easily extensible Omniverse
 
 #### <b>Step 1.1: Download the Stage from the Link Provided</b>
 
-[Stage Link](https://dli-lms.s3.amazonaws.com/assets/x-ov-05-v1/Stage.zip)
+[Stage Link](https://dli-lms.s3.amazonaws.com/assets/x-ov-06-v1/Stage.zip)
 
 #### <b> Step 1.2: Unzip Stage Using Extract All...
 
