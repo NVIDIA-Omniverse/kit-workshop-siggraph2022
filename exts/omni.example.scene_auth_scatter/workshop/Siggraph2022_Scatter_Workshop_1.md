@@ -39,7 +39,7 @@ Navigate inside Omniverse Code's `Content tab` to the stage file's location on y
   
 (i.e. C:/Users/yourName/Downloads/Stage)
  
-**Double Click** `Siggraph2022_Stage.usd` in the center window pane of the `Content tab` at the bottom of the Omniverse Code Console and it will appear in the viewport.
+**Double Click** `Stage.usd` in the center window pane of the `Content tab` at the bottom of the Omniverse Code Console and it will appear in the viewport.
  
 ## Step 2: Adding the Extension
 
