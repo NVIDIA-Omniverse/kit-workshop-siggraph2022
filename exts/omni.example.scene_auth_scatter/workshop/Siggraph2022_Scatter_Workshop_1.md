@@ -48,7 +48,7 @@ We will be getting an extension from the *Community / Third Party Section* of th
 ### Step 2.1: Open Extension Manager
 **Click** on the *Extension Tab*. 
  
-### Step 2.2: Filter by Community Extensions
+### Step 2.2: Filter by Community / Third Party Extensions
 **Select** *Community / Third Party* tab.
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.scene_auth_scatter/workshop/images/filtercommunity.png?raw=true)

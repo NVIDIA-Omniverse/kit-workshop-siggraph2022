@@ -49,7 +49,7 @@ Navigate inside Omniverse Code's `Content tab` to the stage file's location on y
 
 Click on `Extensions` Manager Tab 
 
-#### <b>Step 2.2: Filter by Commnuity Extension</b>
+#### <b>Step 2.2: Filter by Commnuity / Third Party Extensions</b>
 
 Select `Community / Third Party` tab
 
