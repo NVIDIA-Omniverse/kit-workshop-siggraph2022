@@ -21,7 +21,7 @@ See how to easily create your own custom scene layout tool with the modular Omni
 <source src="https://dli-lms.s3.amazonaws.com/assets/x-ov-02-v1/3DLayoutToolsSection1.mp4" type="video/mp4">
 </video>
  
-# Open Stage and Get Extension from Community
+# Open Stage and Get Extension from Community / Third Party
 
 ## Step 1: Open the Workshop Stage
 
@@ -43,17 +43,17 @@ Navigate inside Omniverse Code's `Content tab` to the stage file's location on y
  
 ## Step 2: Adding the Extension
 
-We will be getting an extension from the *Community Section* of the *Extension Manager*. There are also other extensions developed by NVIDIA in the *NVIDIA Section*.
+We will be getting an extension from the *Community / Third Party Section* of the *Extension Manager*. There are also other extensions developed by NVIDIA in the *NVIDIA Section*.
  
 ### Step 2.1: Open Extension Manager
 **Click** on the *Extension Tab*. 
  
 ### Step 2.2: Filter by Community Extensions
-**Select** *Community* tab.
+**Select** *Community / Third Party* tab.
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_1/exts/omni.example.scene_auth_scatter/workshop/images/filtercommunity.png?raw=true)
 
-*Community* section is where you can find other developer's extensions from the Community. 
+*Community / Third Party* section is where you can find other developer's extensions from the Community. 
 
 ### Step 2.3: Search for Scatter
 **Search** for "scatter" and **Click** on the extension with the subtitle *omni.example.scene_auth_scatter*.

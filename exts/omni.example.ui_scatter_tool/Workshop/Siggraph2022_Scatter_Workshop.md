@@ -51,7 +51,7 @@ Click on `Extensions` Manager Tab
 
 #### <b>Step 2.2: Filter by Commnuity Extension</b>
 
-Select `Community` tab
+Select `Community / Third Party` tab
 
 <br>
 

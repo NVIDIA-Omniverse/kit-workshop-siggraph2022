@@ -47,7 +47,7 @@ Click on `Extensions` Manager Tab
 
 #### <b>Step 2.2: Filter by Commnuity Extension</b>
 
-Select `Community` tab
+Select `Community / Third Party` tab
 <br>
 
 ![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/extensionCommunity.PNG?raw=true)
@@ -372,7 +372,7 @@ How can you make your scene unique?
 ><details>
 ><summary>Click here for the answer</summary>
 >
->In the `Extensions` tab, search for Light in the `Community` and install/enable the `Omni.Ui Scene Sample for Manipulating Select Light` extension.
+>In the `Extensions` tab, search for Light in the `Community / Third Party` and install/enable the `Omni.Ui Scene Sample for Manipulating Select Light` extension.
 >
 >![](https://github.com/NVIDIA-Omniverse/kit-workshop-siggraph2022/blob/workshop_2/exts/omni.example.ui_scene.widget_info/Workshop/images/LightExt.png?raw=true)
 >
