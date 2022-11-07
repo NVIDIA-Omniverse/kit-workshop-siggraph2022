@@ -16,7 +16,7 @@ preview_image = "data/preview.png"
 "omni.kit.menu.utils" = {}
 
 [[python.module]]
-name = "omni.example.ui_scatter_tool"
+name = "omni.example.custom_ui"
 
 [[test]]
 args = [

@@ -17,7 +17,7 @@ icon = "data/icon.png"
 "omni.usd" = {  }
 
 [[python.module]]
-name = "omni.example.ui_scene.widget_info"
+name = "omni.example.ui_scene.manipulator_tool"
 
 [[test]]
 args = [
